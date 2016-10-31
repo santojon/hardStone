@@ -32,6 +32,7 @@ with (
          */
         logUser: (user) => {
             _session.currentUser = user
+            document.getElementById("my_avatar").title = user.firstName
             pages.User()
         }
     }

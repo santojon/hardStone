@@ -14,7 +14,7 @@
                     </a>
                 </li>
                 <li id="my-things-click" class="hidden">
-                    <a href="#" title="me"
+                    <a href="#" id="my_avatar" title="me"
                         role="button" aria-haspopup="true" aria-expanded="false"><img
                             class="navbar-brand-logo nav-photo"
                             src="assets/images/user.png"/></a>

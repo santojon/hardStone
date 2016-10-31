@@ -1,4 +1,6 @@
-with (Sgfd.Base) {
+with (
+    Sgfd.Base.autoMerge(PhpbridgeService)
+) {
     var UserService = {
         /**
          * Find by any user info
@@ -19,6 +21,7 @@ with (Sgfd.Base) {
                         callback(u)
                     }
                 )
+                dump(dataPool.export('json'))
             }
         }
     }

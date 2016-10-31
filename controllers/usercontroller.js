@@ -1,7 +1,7 @@
 with (Sgfd.Base) {
     var UserController = {
         /**
-         * 
+         * Validate user to open its info page
          */
         validate: (user) => {
             if (user !== null) {
