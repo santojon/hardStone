@@ -11,7 +11,7 @@ pages.Admin = (params) => {
         document.getElementById('admin-save-btn').onclick = () => {
             var subs = []
             $(":checkbox").each(() => {
-                subs.push({ id: Number(this.id), status: Boolean(this.checked) })
+                subs.push({ id: parseInt(this.id), status: this.checked ? true : false })
             })
             saveAllSubscriptions(subs)
         }
