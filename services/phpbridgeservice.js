@@ -3,23 +3,23 @@ with (Sgfd.Base) {
         /**
          * Saves text to file in server
          */
-        saveFile: function(text, usr, type, bt) {
+        saveFile: (text, usr, type, bt) => {
             // create form to do post
-            var data = new FormData();
+            var data = new FormData()
 
             // append text and user
-            data.append('text' , text);
-            data.append('user' , usr);
-            data.append('type' , type);
+            data.append('text' , text)
+            data.append('user' , usr)
+            data.append('type' , type)
 
             // create, build and send request
-            var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest()
 
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = () => {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
                     if (bt) {
-                        bt.title = 'Saved!';
-                        bt.disabled = true;
+                        bt.title = 'Saved!'
+                        bt.disabled = true
                     }
                 }
             }
@@ -28,50 +28,51 @@ with (Sgfd.Base) {
                 'post',
                 Php_bridge.bridgeTo('save'),
                 true
-            );
+            )
 
-            xhr.send(data);
+            xhr.send(data)
         },
         /**
          * Saves entire database to file
          */
-        dump: function(text) {
+        dump: (text) => {
+            console.log(text)
             // create form to do post
-            var data = new FormData();
+            var data = new FormData()
 
             // append text
-            data.append('text' , text);
+            data.append('text' , text)
 
             // create, build and send request
-            var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest()
 
             xhr.open(
                 'post',
                 Php_bridge.bridgeTo('dump'),
                 true
-            );
+            )
 
-            xhr.send(data);
+            xhr.send(data)
         },
         /**
          * Restore database
         */
-        getDb: function() {
+        getDb: () => {
             // create, build and send request
-            var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest()
             xhr.open(
                 'get',
                 Php_bridge.bridgeTo('getDb'),
                 true
-            );
+            )
 
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = () => {
                 if (xhr.readyState == 4 && xhr.status == 200) {
-                    dataPool.importFrom(xhr.responseText, 'json');
+                    dataPool.import(xhr.responseText, 'json')
                 }
             }
 
-            xhr.send(null);
+            xhr.send(null)
         }
     }
 }

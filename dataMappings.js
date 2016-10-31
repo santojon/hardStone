@@ -16,15 +16,15 @@ var Php_bridge = {
         dump: 'dump',
         getDb: 'getDb'
     },
-    bridgeTo: function(to) {
+    bridgeTo: (to) => {
         with (Php_bridge) {
-            return base + '/' + paths[to] + '.' + type;
+            return base + '/' + paths[to] + '.' + type
         }
     }
-};
+}
 
 
 /**
  * Import existent databases
  */
-PhpbridgeService.getDb();
+PhpbridgeService.getDb()

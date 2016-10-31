@@ -24,4 +24,11 @@ new User({
     email: 'santojon5@gmail.com'
 }).save((u) => {
     console.log(u)
+    new Subscription({
+        user: u,
+        status: false,
+        created: new Date()
+    }).save((s) => {
+        console.log(s)
+    })
 })

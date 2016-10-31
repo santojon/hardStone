@@ -1,33 +1,44 @@
-with (Sgfd.Base) {
-    var SubscriptionControler = {
-        subscribeTest: (callback) => {
-            var s = new Subscription({
-                user: User.findBy({ username: 'santojon' }),
-                responsible: User.findBy({ username: 'admin' }),
-                status: false,
-                created: new Date()
+with (
+    Sgfd.Base.autoMerge(SubscriptionService)
+) {
+    var SubscriptionController = {
+        /**
+         * Return all subscriptions to screen
+         */
+        getSubscriptions: () => {
+            var results = []
+
+            getSubscriptions().forEach((sub) => {
+                console.log(sub)
+
+                var checked = '<td><input id="' + sub.id() +
+                                '" type="checkbox" checked="true"></td>'
+
+                var unchecked = '<td><input id="' + sub.id() +
+                                '" type="checkbox"></td>'
+
+                var set = sub.status ? checked : unchecked
+
+                results.push(
+                    '<tr>\
+                        <td>' + sub.user.username + '</td>\
+                        <td>' + sub.user.email + '</td>\
+                        <td>' + sub.created.toDateString() + '</td>\
+                    ' + set + '</tr>'
+                )
             })
 
-            s.save()
-            s.save(callback)
-
-            // to save json at least php is needed
+            return results.join('')
         },
-        loadSubscriptions: (callback) => {
-            var url = document.URL, 
-                    shortUrl = url.substring(0, url.lastIndexOf('/'))
-            var xhr = new XMLHttpRequest()
-
-            xhr.open('get', shortUrl + '/data/dump.json', true)
-            xhr.send()
-
-            xhr.onreadystatechange = () =>
-            {
-                if (xhr.readyState == 4 && xhr.status == 200)
-                {
-                    if (dataPool.import(xhr.responseText, 'json')) callback()
-                }
-            }
+        /**
+         * Save all subscriptions
+         */
+        saveAllSubscriptions: (subs) => {
+            subs.forEach((sub) => {
+                var s = getSubscription(sub.id)
+                s.status = sub.status
+                saveSubscription(s)
+            })
         }
     }
 }

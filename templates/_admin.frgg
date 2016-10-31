@@ -1,5 +1,16 @@
 <div id="admin" class="main container hidden">
-    <div>
-        <h2>Admin</h2>
-    </div>
+    <h2>Subscriptions</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Subscribed in</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="admin-tb-body">
+        </tbody>
+    </table>
+    <button id="admin-save-btn" class="btn btn-success">Save</button>
 </div>

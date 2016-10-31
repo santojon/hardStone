@@ -16,7 +16,7 @@ var appConfig = {
     back: {
         full: ['user'],
         controllers: ['home', 'subscription', 'login'],
-        services: ['phpbridge'],
+        services: ['phpbridge', 'subscription'],
         bwfDomains: ['user', 'subscription'],
         views: ['home', 'join', 'status', 'admin', 'login']
     },

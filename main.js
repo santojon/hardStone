@@ -31,6 +31,13 @@ document.getElementById('my-things-click').onclick = () => {
     pages.User()
 }
 
+document.getElementById('admin-click').onclick = () => {
+    unselectItem('login-click')
+    unselectItem('tournament-click')
+    selectItem('my-things-click')
+    pages.Admin()
+}
+
 
 // open home
 pages.Home()

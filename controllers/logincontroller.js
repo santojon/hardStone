@@ -32,8 +32,15 @@ with (
          */
         logUser: (user) => {
             _session.currentUser = user
-            document.getElementById("my_avatar").title = user.firstName
+            document.getElementById('my_avatar').title = user.firstName
+
             pages.User()
+            console.log(user)
+            if (user.type === 'admin') {
+                showItem('admin_info')
+            } else {
+                hideItem('admin_info')
+            }
         }
     }
 }
