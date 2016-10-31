@@ -340,3 +340,7 @@ a.header-link:hover {
 .home-content {
     padding-top: 170px;
 }
+
+.btn {
+    background-color: #586D9E;
+}

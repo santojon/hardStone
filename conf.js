@@ -15,7 +15,7 @@ var appConfig = {
     },
     back: {
         full: ['user'],
-        controllers: ['home', 'subscription'],
+        controllers: ['home', 'subscription', 'login'],
         bwfDomains: ['user', 'subscription'],
         views: ['home', 'join', 'status', 'admin', 'login']
     },

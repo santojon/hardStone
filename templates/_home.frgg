@@ -1,4 +1,4 @@
-<div id="home" class="main container">
+<div id="home" class="main container hidden">
     <div class="hs-logo-full">
         <img src="assets/images/logo-family-hearthstone.png">
     </div>

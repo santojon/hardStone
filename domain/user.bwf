@@ -4,5 +4,5 @@ User: {
     username: string,
     type: string,
     password: string,
-    image: string
+    email: string
 }

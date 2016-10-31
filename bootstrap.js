@@ -7,7 +7,7 @@ new User({
     username: 'admin',
     type: 'admin',
     password: 'admin',
-    image: ''
+    email: 'admin@admin.com'
 }).save((u) => {
     console.log(u)
 })
@@ -20,7 +20,8 @@ new User({
     lastName: 'Santos',
     username: 'santojon',
     type: 'user',
-    password: 'test'
+    password: 'test',
+    email: 'santojon5@gmail.com'
 }).save((u) => {
     console.log(u)
 })

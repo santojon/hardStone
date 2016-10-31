@@ -1,3 +1,3 @@
-pages.User = (params) => {
+pages.Admin = (params) => {
     
 }
