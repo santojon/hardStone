@@ -1,0 +1,338 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require main
+*= require mobile
+*= require_self
+*/
+
+ul, li {
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
+
+.width100p {
+    width: 100% !important;
+}
+
+.height35 {
+    height: 35px;
+}
+
+.height200 {
+    height: 200px !important;
+}
+
+.height390 {
+    height: 390px !important;
+}
+
+.width100 {
+    min-width: 100px;
+}
+
+.width200 {
+    min-width: 200px;
+}
+
+.width300 {
+    min-width: 300px;
+}
+
+.pRight5 {
+    padding-right: 5px !important;
+}
+
+.pLeft5 {
+    padding-left: 5px !important;
+}
+
+.navbar-hs {
+    background-color: #586D9E;
+    color: #ffffff;
+    border-width: 0;
+    height: 50px;
+}
+
+.navbar-hs .navbar-brand, .navbar-hs > .container-fluid .navbar-brand {
+    padding: 14px;
+    color: #ffffff;
+}
+
+.main {
+    padding-top: 50px;
+}
+
+.navbar-hs li > a:focus, .navbar-hs li.active {
+    background-color: #CBAD4B;
+    color: #000000;
+}
+
+.navbar-hs li > a:hover {
+    background-color: #4EECFE;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.navbar-hs a {
+    color: #f0f0f0;
+    letter-spacing: 1px;
+}
+
+.navbar-hs .form-control:focus {
+    border-color: #ffffff;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+}
+
+.navbar-brand-logo {
+    margin-top: -9px;
+    width: 40px;
+    height: 40px;
+}
+
+.nav-photo {
+    margin-bottom: -10px !important;
+    margin-top: -12px !important;
+    border-radius: 2px !important;
+}
+
+.navbar-breadcrumb {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-force-left {
+    margin-left: -15px;
+    padding-left: -15px;
+    padding-right: 5px;
+}
+
+.nav2-hs {
+    background-color: #f0f0f0;
+}
+
+.third {
+    width: 32.75%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+a.header-link {
+    text-decoration: none !important;
+    color: #000000;
+}
+
+.header-id {
+    font-size: 14px;
+}
+
+a.header-link:hover {
+    text-decoration: none !important;
+    color: #666666;
+}
+
+.container {
+    padding-top: 50px;
+    width: 100% !important;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-danger {
+    background-color: #ffffff;
+    border-left-color: #586D9E;
+}
+
+.bs-callout-inf {
+    background-color: #f7f7f7 !important;
+}
+
+.endMessage {
+    text-align: center;
+    width: 97%;
+    margin: 0;
+    padding: 15px 30px 10px 30px;
+    vertical-align: middle;
+    background: #f0f0f0;
+    color: #000000;
+    border-radius: 4px;
+    border: solid 1px #a0a0a0;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    left: 20px;
+}
+
+.errors {
+    padding-top: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f7f7f7;
+}
+
+.inf {
+    padding-top: 5px;
+    width: 100% !important;
+}
+
+.here-info {
+    overflow: hidden;
+    max-height: 190px;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+.hide-overflow, span.hide-overflow {
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+
+.urlive-container {
+    width: inherit;
+    min-height: 100px;
+    max-height: 350px;
+    overflow: hidden;
+}
+
+.image-container {
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+}
+
+.loading {
+    float: left;
+    padding-left: 45%;
+    padding-top: 50%;
+}
+
+.popover {
+    min-width: 200px !important;
+}
+
+.image-up {
+    padding-top: -10px;
+    margin-left: 10px;
+}
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#home {
+    background-image: url('../images/hearthstone_title_art_by_breathing.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 435px;
+}
+
+.hs-logo-full {
+    max-width: 350px;
+    padding: 40px 40px;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+}

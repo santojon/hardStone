@@ -1,0 +1,7 @@
+Subscription: {
+    user: User,
+    status: boolean,
+    responsible: User,
+    created: Date,
+    responded: Date
+}

@@ -1,0 +1,3 @@
+pages.User = (params) => {
+    
+}

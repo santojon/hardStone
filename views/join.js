@@ -1,0 +1,3 @@
+pages.Join = (params) => {
+    
+}
