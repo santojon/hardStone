@@ -2,4 +2,8 @@
     <div class="hs-logo-full">
         <img src="assets/images/logo-family-hearthstone.png">
     </div>
+
+    <div class="home-content container-fluid">
+        <h2>LabHard HearthStone Tournament</h2>
+    </div>
 </div>

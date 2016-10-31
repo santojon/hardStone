@@ -10,7 +10,7 @@ var appConfig = {
             'https://code.jquery.com/jquery-2.2.3.min.js',
             'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',
             'https://use.fontawesome.com/670555b458.js',
-            norse.frgg + '/frgg.js'
+            'libs/frgg/frgg.js'
         ]
     },
     back: {
@@ -22,8 +22,8 @@ var appConfig = {
     conf: {
         appName: 'hardStone',
         dependencies: [
-            norse.bwf + '/bwf.full.js',
-            norse.bhdr + '/bhdr.js'
+            'libs/bwf/bwf.full.js',
+            'libs/bhdr/bhdr.js'
         ],
         dataPool: 'Bhdr',
         classLoader: 'Bwf',

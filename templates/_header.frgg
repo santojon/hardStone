@@ -21,7 +21,7 @@
                         Tournament
                     </a>
                 </li>
-                <li id="my-things-click" class="hidden">
+                <li id="my-things-click" class="">
                     <a title="My things" href="#">
                         My things
                     </a>

@@ -336,3 +336,7 @@ a.header-link:hover {
     margin: 0 auto 25px;
     margin-top: 50px;
 }
+
+.home-content {
+    padding-top: 170px;
+}
