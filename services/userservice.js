@@ -16,6 +16,7 @@ with (
          */
         createUser: (info, callback) => {
             if (info.email && info.password) {
+                info.type = 'user'
                 new User(info).save(
                     (u) => {
                         callback(u)

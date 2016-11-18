@@ -9,19 +9,19 @@ with (
             var results = []
 
             getSubscriptions().forEach((sub) => {
-                var checked = '<td class="col-md-1"><input id="' + sub.id() +
+                var checked = '<td class="col-md-1 col-sm-1 col-lg-1"><input id="' + sub.id() +
                                 '" type="checkbox" checked="true"></td>'
 
-                var unchecked = '<td class="col-md-1"><input id="' + sub.id() +
+                var unchecked = '<td class="col-md-1 col-sm-1 col-lg-1"><input id="' + sub.id() +
                                 '" type="checkbox"></td>'
 
                 var set = sub.status ? checked : unchecked
 
                 results.push(
                     '<tr>\
-                        <td class="col-md-3">' + sub.user.username + '</td>\
-                        <td class="col-md-5">' + sub.user.email + '</td>\
-                        <td class="col-md-4">' + sub.created.toDateString() + '</td>\
+                        <td class="col-md-3 col-sm-3 col-lg-3">' + sub.user.username + '</td>\
+                        <td class="col-md-5 col-sm-5 col-lg-5">' + sub.user.email + '</td>\
+                        <td class="col-md-4 col-sm-4 col-lg-4">' + sub.created.toDateString() + '</td>\
                     ' + set + '</tr>'
                 )
             })

@@ -7,7 +7,8 @@ new User({
     username: 'admin',
     type: 'admin',
     password: 'admin',
-    email: 'admin@admin.com'
+    email: 'admin@admin.com',
+    gender: 'male',
 }).save((u) => {
     console.log(u)
 })
@@ -21,7 +22,8 @@ new User({
     username: 'santojon',
     type: 'user',
     password: 'test',
-    email: 'santojon5@gmail.com'
+    email: 'santojon5@gmail.com',
+    gender: 'male',
 }).save((u) => {
     console.log(u)
     new Subscription({

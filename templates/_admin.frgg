@@ -1,27 +1,29 @@
 <div id="admin" class="main container hidden">
-    <h2>
-        Subscriptions
-        <button id="logout-click-admin" title="Sign out" class="pull-right btn btn-default">
-            <span class="fa fa-sign-out"></span>
-        </button>
+    <div class="col-md-12 col-sm-12 col-lg-12">
+        <h2>
+            Subscriptions
+            <button id="logout-click-admin" title="Sign out" class="pull-right btn btn-default">
+                <span class="fa fa-sign-out"></span>
+            </button>
 
-        <button title="Manage your account" id="account-click" class="pull-right mRight5 btn btn-info">
-            <span class="fa fa-user"></span>
+            <button title="Manage your account" id="account-click" class="pull-right mRight5 btn btn-info">
+                <span class="fa fa-user"></span>
+            </button>
+        </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-3 col-sm-3 col-lg-3">Username</th>
+                    <th class="col-md-5 col-sm-5 col-lg-5">Email</th>
+                    <th class="col-md-4 col-sm-4 col-lg-4">Subscribed in</th>
+                    <th class="col-md-1 col-sm-1 col-lg-1">Status</th>
+                </tr>
+            </thead>
+            <tbody id="admin-tb-body">
+            </tbody>
+        </table>
+        <button title="Save" id="admin-save-btn" class="pull-right btn btn-success">
+            <span class="fa fa-save"></span>
         </button>
-    </h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th class="col-md-3">Username</th>
-                <th class="col-md-5">Email</th>
-                <th class="col-md-4">Subscribed in</th>
-                <th class="col-md-1">Status</th>
-            </tr>
-        </thead>
-        <tbody id="admin-tb-body">
-        </tbody>
-    </table>
-    <button title="Save" id="admin-save-btn" class="pull-right btn btn-success">
-        <span class="fa fa-save"></span>
-    </button>
+    </div>
 </div>

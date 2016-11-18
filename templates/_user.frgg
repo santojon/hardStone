@@ -1,5 +1,5 @@
 <div id="user" class="main container hidden">
-    <div class="">
+    <div class="col-md-12 col-sm-12 col-lg-12">
         <h2>
             My Things
             <button id="logout-click" title="Sign out" class="pull-right btn btn-default">
@@ -10,5 +10,56 @@
                 <span class="fa fa-envelope-o"></span>
             </button>
         </h2>
+
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userFirstName">First name</label>
+            <input type="email" class="form-control" id="userFirstName" placeholder="Enter email">
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userLastName">Last name</label>
+            <input type="password" class="form-control" id="userLastName" placeholder="Enter password">
+        </div>
+        
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userUsername">Username</label>
+            <input type="email" class="form-control" id="userUsername" placeholder="Enter email">
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userGender">Gender</label>
+            <select class="form-control" id="userGender">
+                <option id="fem">Female</option>
+                <option id="mal">Male</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userEmail">Email address</label>
+            <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+        </div>
+
+        <div class="form-group col-md-4 col-sm-6 col-lg-4">
+            <label for="userPassword">Password</label>
+            <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+            <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 col-lg-12">
+            <label for="userImage">Your image url</label>
+            <input type="email" class="form-control" id="userImage" placeholder="Enter email">
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 col-lg-12">
+            <label class="form-check-label">
+            <input type="checkbox" class="subscribe-cb">
+                Subscribe to tournament
+            </label>
+        </div>
+
+        <button title="Save" id="user-save-btn" class="pull-right btn btn-success">
+            <span class="fa fa-save"></span>
+        </button>
+
     </div>
 </div>
