@@ -19,7 +19,7 @@ var appConfig = {
         controllers: ['home', 'subscription', 'login'],
         services: ['phpbridge', 'subscription'],
         bwfDomains: ['user', 'subscription'],
-        views: ['home', 'join', 'status', 'admin', 'login']
+        views: ['home', 'status', 'admin', 'login']
     },
     conf: {
         appName: 'hardStone',
