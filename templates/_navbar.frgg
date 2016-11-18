@@ -17,7 +17,7 @@
                     <a href="#" id="my_avatar" title="me"
                         role="button" aria-haspopup="true" aria-expanded="false"><img
                             class="navbar-brand-logo nav-photo"
-                            src="assets/images/user.png"/></a>
+                            src="assets/images/neutral.png"/></a>
                 </li>
                 <li id="login-click"><a href="#">Log in</a></li>
             </ul>
