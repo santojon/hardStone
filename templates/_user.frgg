@@ -1,6 +1,9 @@
 <div id="user" class="main container hidden">
     <div class="">
         <h2>My Things</h2>
+        <button id="logout-click" title="Sign out" class="btn btn-default">
+            <span class="fa fa-sign-out"></span>
+        </button>
     </div>
 
     <di id="admin_info" class="hidden">

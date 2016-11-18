@@ -13,6 +13,21 @@ hideOthers = (that) => {
 }
 
 /**
+ * Session related functions
+ */
+saveSession = () => {
+    localStorage.setItem('_session', JSON.stringify(_session))
+}
+
+getSession = () => {
+    return JSON.parse(localStorage.getItem('_session'))
+}
+
+cleanSession = () => {
+    localStorage.removeItem('_session')
+}
+
+/**
  * Add class to item with id
  */
 addClass = (item, cls) => {

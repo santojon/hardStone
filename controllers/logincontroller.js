@@ -7,7 +7,7 @@ with (
          * @param email: user email
          * @param password: user password
          */
-        sigIn: (email, password) => {
+        signIn: (email, password) => {
             with (LoginController) {
                 var info = { email: email, password: password }
                 var logU = findUser(info)
@@ -27,11 +27,21 @@ with (
             }
         },
         /**
+         * Remove user from session and gets out of system
+         */
+        signOut: () => {
+            _session = new Object({ currentUser: null })
+            cleanSession()
+
+            pages.Home()
+        },
+        /**
          * Log user to session scope
          * @param user: the user to add to session
          */
         logUser: (user) => {
             _session.currentUser = user
+            saveSession()
             document.getElementById('my_avatar').title = user.firstName
 
             pages.User()

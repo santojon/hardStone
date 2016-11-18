@@ -1,4 +1,6 @@
-with (Sgfd.Base) {
+with (
+    Sgfd.Base.autoMerge(LoginController, UserService)
+) {
     var UserController = {
         /**
          * Validate user to open its info page
@@ -11,6 +13,17 @@ with (Sgfd.Base) {
             } else {
                 pages.Login()
             }
+        },
+        /**
+         * Go away
+         */
+        signOut: () => {
+            unselectItem('my-things-click')
+            showItem('login-click')
+            hideItem('my-things-click')
+
+            // Function from LoginController
+            signOut()
         }
     }
 }
