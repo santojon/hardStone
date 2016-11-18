@@ -10,9 +10,13 @@ pages.Admin = (params) => {
         // when click in save button
         document.getElementById('admin-save-btn').onclick = () => {
             var subs = []
-            $(":checkbox").each(() => {
-                subs.push({ id: parseInt(this.id), status: this.checked ? true : false })
-            })
+            var inputs = document.getElementsByTagName("input")
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type === "checkbox") {
+                    subs.push({ id: parseInt(inputs[i].id), status: inputs[i].checked ? true : false })
+                }
+            }
             saveAllSubscriptions(subs)
         }
     }

@@ -9,8 +9,6 @@ with (
             var results = []
 
             getSubscriptions().forEach((sub) => {
-                console.log(sub)
-
                 var checked = '<td><input id="' + sub.id() +
                                 '" type="checkbox" checked="true"></td>'
 

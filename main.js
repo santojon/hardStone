@@ -1,5 +1,5 @@
 // create session 
-var _session = new Object({ currentUser: null });
+var _session = new Object({ currentUser: null })
 
 
 // set navbar clicks

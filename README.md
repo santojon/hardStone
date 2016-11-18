@@ -1,2 +1,2 @@
 # hardStone
-HearthStone Conquest LabHard System
+HearthStone Tournament LabHard System
