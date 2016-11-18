@@ -9,21 +9,19 @@ with (
             var results = []
 
             getSubscriptions().forEach((sub) => {
-                console.log(sub)
-
-                var checked = '<td><input id="' + sub.id() +
+                var checked = '<td class="col-md-1"><input id="' + sub.id() +
                                 '" type="checkbox" checked="true"></td>'
 
-                var unchecked = '<td><input id="' + sub.id() +
+                var unchecked = '<td class="col-md-1"><input id="' + sub.id() +
                                 '" type="checkbox"></td>'
 
                 var set = sub.status ? checked : unchecked
 
                 results.push(
                     '<tr>\
-                        <td>' + sub.user.username + '</td>\
-                        <td>' + sub.user.email + '</td>\
-                        <td>' + sub.created.toDateString() + '</td>\
+                        <td class="col-md-3">' + sub.user.username + '</td>\
+                        <td class="col-md-5">' + sub.user.email + '</td>\
+                        <td class="col-md-4">' + sub.created.toDateString() + '</td>\
                     ' + set + '</tr>'
                 )
             })
@@ -34,11 +32,8 @@ with (
          * Save all subscriptions
          */
         saveAllSubscriptions: (subs) => {
-            subs.forEach((sub) => {
-                var s = getSubscription(sub.id)
-                s.status = sub.status
-                saveSubscription(s)
-            })
+            // From SubscriptionService
+            saveSubscriptions(subs)
         }
     }
 }

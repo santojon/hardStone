@@ -1,5 +1,16 @@
-// create session 
-var _session = new Object({ currentUser: null });
+// create (or get) session
+var _session = getSession()
+
+if (_session === null) {
+    _session = new Object({ currentUser: null })
+    saveSession()
+} else if (_session['currentUser'] !== null) {
+    // If user is present, signIn
+    LoginController.signIn(
+        _session.currentUser.email,
+        _session.currentUser.password
+    )
+}
 
 
 // set navbar clicks
@@ -37,7 +48,6 @@ document.getElementById('admin-click').onclick = () => {
     selectItem('my-things-click')
     pages.Admin()
 }
-
 
 // open home
 pages.Home()

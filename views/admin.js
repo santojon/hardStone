@@ -10,10 +10,26 @@ pages.Admin = (params) => {
         // when click in save button
         document.getElementById('admin-save-btn').onclick = () => {
             var subs = []
-            $(":checkbox").each(() => {
-                subs.push({ id: parseInt(this.id), status: this.checked ? true : false })
-            })
+            var inputs = document.getElementsByTagName("input")
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type === "checkbox") {
+                    subs.push({ id: parseInt(inputs[i].id), status: inputs[i].checked ? true : false })
+                }
+            }
+            // From SubscriptionController
             saveAllSubscriptions(subs)
+        }
+
+        // Logout button
+        document.getElementById('logout-click-admin').onclick = () => {
+            // Function from UserController
+            signOut()
+        }
+
+        // Manage account admin button
+        document.getElementById('account-click').onclick = () => {
+            pages.User()
         }
     }
 }

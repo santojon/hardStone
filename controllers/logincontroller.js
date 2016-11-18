@@ -7,7 +7,7 @@ with (
          * @param email: user email
          * @param password: user password
          */
-        sigIn: (email, password) => {
+        signIn: (email, password) => {
             with (LoginController) {
                 var info = { email: email, password: password }
                 var logU = findUser(info)
@@ -21,10 +21,23 @@ with (
                 // log existent user
                 else {
                     if (email === logU.email) {
-                        if (password === logU.password) logUser(logU)
+                        if (password === logU.password) {
+                            logUser(logU)
+                        } else {
+                            showError('Incorrect information!')
+                        }
                     }
                 }
             }
+        },
+        /**
+         * Remove user from session and gets out of system
+         */
+        signOut: () => {
+            _session = new Object({ currentUser: null })
+            cleanSession()
+
+            pages.Home()
         },
         /**
          * Log user to session scope
@@ -32,14 +45,15 @@ with (
          */
         logUser: (user) => {
             _session.currentUser = user
+            saveSession()
             document.getElementById('my_avatar').title = user.firstName
 
             pages.User()
             console.log(user)
             if (user.type === 'admin') {
-                showItem('admin_info')
+                showItem('admin-click')
             } else {
-                hideItem('admin_info')
+                hideItem('admin-click')
             }
         }
     }
