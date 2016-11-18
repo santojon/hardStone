@@ -1,0 +1,5 @@
+<div id ="globalErrorMessage" class="alert alert-danger alert-dismissible hidden">
+</div>
+
+<div id ="globalSuccessMessage" class="alert alert-success alert-dismissible hidden">
+</div>

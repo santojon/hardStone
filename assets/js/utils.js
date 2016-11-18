@@ -31,14 +31,20 @@ cleanSession = () => {
  * Add class to item with id
  */
 addClass = (item, cls) => {
-    if (document.getElementById(item) !== null) document.getElementById(item).classList.add(cls)
+    if (document.getElementById(item) !== null) {
+        document.getElementById(item).classList.add(cls)
+        document.getElementById(item).style = ''
+    }
 }
 
 /**
  * Remove class to item with id
  */
 removeClass = (item, cls) => {
-    if (document.getElementById(item) !== null) document.getElementById(item).classList.remove(cls)
+    if (document.getElementById(item) !== null) {
+        document.getElementById(item).classList.remove(cls)
+        document.getElementById(item).style = ''
+    }
 }
 
 
@@ -60,4 +66,29 @@ selectItem = (item) => {
 
 unselectItem = (item) => {
     removeClass(item, 'active')
+}
+
+/**
+ * Errors related
+ */
+showError = (msg) => {
+    setMessage(msg, 'globalErrorMessage')
+    showItem('globalErrorMessage')
+
+    $('#globalErrorMessage').delay(3000).slideUp(200, () => {
+        hideItem('globalErrorMessage')
+    })
+}
+
+showSuccess = (msg) => {
+    setMessage(msg, 'globalSuccessMessage')
+    showItem('globalSuccessMessage')
+
+    $('#globalSuccessMessage').delay(3000).slideUp(200, () => {
+        hideItem('globalSuccessMessage')
+    })
+}
+
+setMessage = (msg, item) => {
+    document.getElementById(item).innerHTML = msg
 }

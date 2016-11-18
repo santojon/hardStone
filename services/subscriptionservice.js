@@ -9,11 +9,16 @@ with (
             return Subscription.findAll()
         },
         /**
-         * Save a given subscriptions
-         * @param sub: the subscription to save
+         * Save given subscriptions
+         * @param subs: the subscriptions to save
          */
-        saveSubscription: (sub) => {
-            sub.save()
+        saveSubscriptions: (subs) => {
+            subs.forEach((sub) => {
+                var s = SubscriptionService.getSubscription(sub.id)
+                s.status = sub.status
+            })
+
+            showSuccess('All Subscriptions where saved!')
             dump(dataPool.export('json'))
         },
         /**

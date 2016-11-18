@@ -21,7 +21,11 @@ with (
                 // log existent user
                 else {
                     if (email === logU.email) {
-                        if (password === logU.password) logUser(logU)
+                        if (password === logU.password) {
+                            logUser(logU)
+                        } else {
+                            showError('Incorrect information!')
+                        }
                     }
                 }
             }
@@ -47,9 +51,9 @@ with (
             pages.User()
             console.log(user)
             if (user.type === 'admin') {
-                showItem('admin_info')
+                showItem('admin-click')
             } else {
-                hideItem('admin_info')
+                hideItem('admin-click')
             }
         }
     }

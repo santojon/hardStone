@@ -1,16 +1,13 @@
-/*
-* This is a manifest file that'll be compiled into application.css, which will include all the files
-* listed below.
-*
-* Any CSS file within this directory can be referenced here using a relative path.
-*
-* You're free to add application-wide styles to this file and they'll appear at the top of the
-* compiled file, but it's generally better to create a new file per style scope.
-*
-*= require main
-*= require mobile
-*= require_self
-*/
+.mRight5 {
+    margin-right: 5px !important;
+}
+
+.alert {
+    border-radius: 0 !important;
+    float: left;
+    width: 100%;
+    margin-top: 50px !important;
+}
 
 ul, li {
     text-decoration: none !important;
@@ -67,6 +64,10 @@ ul, li {
 
 .main {
     padding-top: 50px;
+}
+
+.main.login {
+    padding-top: 80px !important;
 }
 
 .navbar-hs li > a:focus, .navbar-hs li.active {

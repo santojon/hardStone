@@ -1,14 +1,14 @@
 <div id="user" class="main container hidden">
     <div class="">
-        <h2>My Things</h2>
-        <button id="logout-click" title="Sign out" class="btn btn-default">
-            <span class="fa fa-sign-out"></span>
-        </button>
-    </div>
+        <h2>
+            My Things
+            <button id="logout-click" title="Sign out" class="pull-right btn btn-default">
+                <span class="fa fa-sign-out"></span>
+            </button>
 
-    <di id="admin_info" class="hidden">
-        <button id="admin-click" class="btn btn-success">
-            Admin page
-        </button>
+            <button title="Manage Subscriptions" id="admin-click" class="pull-right mRight5 btn btn-warning hidden">
+                <span class="fa fa-envelope-o"></span>
+            </button>
+        </h2>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<div id="login" class="main container hidden">
+<div id="login" class="main login container hidden">
     <div class="card card-container">
         <p id="profile-name" class="profile-name-card">Login / Create Account</p>
         <p></p>

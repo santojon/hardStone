@@ -17,7 +17,19 @@ pages.Admin = (params) => {
                     subs.push({ id: parseInt(inputs[i].id), status: inputs[i].checked ? true : false })
                 }
             }
+            // From SubscriptionController
             saveAllSubscriptions(subs)
+        }
+
+        // Logout button
+        document.getElementById('logout-click-admin').onclick = () => {
+            // Function from UserController
+            signOut()
+        }
+
+        // Manage account admin button
+        document.getElementById('account-click').onclick = () => {
+            pages.User()
         }
     }
 }
