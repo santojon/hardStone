@@ -3,6 +3,6 @@ pages.Home = (params) => {
 
     // Get data from home info content repo
     with (HomeControler) {
-
+        index()
     }
 }

@@ -1,2 +1,2 @@
 # hardStone
-HearthStone Tournament LabHard System
+HearthStone LabHard Tournament Website
