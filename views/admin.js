@@ -14,7 +14,9 @@ pages.Admin = (params) => {
 
             for (var i = 0; i < inputs.length; i++) {
                 if (inputs[i].type === "checkbox") {
-                    subs.push({ id: parseInt(inputs[i].id), status: inputs[i].checked ? true : false })
+                    if (inputs[i].id) {
+                        subs.push({ id: parseInt(inputs[i].id), status: inputs[i].checked ? true : false })
+                    }
                 }
             }
             // From SubscriptionController

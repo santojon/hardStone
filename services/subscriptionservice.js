@@ -14,8 +14,11 @@ with (
          */
         saveSubscriptions: (subs) => {
             subs.forEach((sub) => {
-                var s = SubscriptionService.getSubscription(sub.id)
-                s.status = sub.status
+                console.log(sub)
+                if(sub.id) {
+                    var s = SubscriptionService.getSubscription(sub.id)
+                    s.status = sub.status
+                }
             })
 
             showSuccess('All Subscriptions where saved!')

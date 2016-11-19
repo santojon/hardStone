@@ -24,6 +24,18 @@ with (
                 )
                 dump(dataPool.export('json'))
             }
+        },
+        /**
+         * Update user info
+         */
+        updateUser: (user, clbk) => {
+            // Get user from db
+            var info = { email: user.email, password: user.password }
+            var dbUser = UserService.findUser(info)
+
+            // Update it
+            dbUser.update(user, clbk)
+            dump(dataPool.export('json'))
         }
     }
 }
