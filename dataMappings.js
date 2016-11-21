@@ -23,8 +23,23 @@ var Php_bridge = {
     }
 }
 
+// Myjson API bridge
+// Database in [http://myjson.com/5953q]
+var Myjson_bridge = {
+    type: 'json',
+    base: 'https://api.myjson.com/bins',
+    paths: {
+        all: '5953q',
+    },
+    bridgeTo: (to) => {
+        with (Myjson_bridge) {
+            return base + '/' + paths[to]
+        }
+    }
+}
 
 /**
  * Import existent databases
  */
 PhpbridgeService.getDb()
+MyjsonbridgeService.getDb()

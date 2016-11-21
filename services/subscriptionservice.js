@@ -1,5 +1,5 @@
 with (
-    Sgfd.Base.autoMerge(PhpbridgeService)
+    Sgfd.Base.autoMerge(MyjsonbridgeService)
 ) {
     var SubscriptionService = {
         /**
