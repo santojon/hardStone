@@ -22,7 +22,7 @@
         </div>
         
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userUsername">Username</label>
+            <label for="userUsername">Username*</label>
             <input type="text" class="form-control" id="userUsername" placeholder="Enter username">
         </div>
 
@@ -35,14 +35,13 @@
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userEmail">Email address</label>
+            <label for="userEmail">Email address*</label>
             <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userPassword">Password</label>
+            <label for="userPassword">Password*</label>
             <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
-            <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
         </div>
 
         <div class="form-group col-md-12 col-sm-12 col-lg-12">
@@ -50,11 +49,7 @@
             <input type="text" class="form-control" id="userImage" placeholder="Enter image URL">
         </div>
 
-        <div class="form-group col-md-12 col-sm-12 col-lg-12">
-            <label class="form-check-label">
-            <input type="checkbox" class="subscribe-cb">
-                Subscribe to tournament
-            </label>
+        <div id="sub-place" class="form-group col-md-12 col-sm-12 col-lg-12">
         </div>
 
         <button title="Save" id="user-save-btn" class="pull-right btn btn-success">

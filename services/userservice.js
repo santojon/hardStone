@@ -1,5 +1,5 @@
 with (
-    Sgfd.Base.autoMerge(PhpbridgeService)
+    Sgfd.Base.autoMerge(PhpbridgeService, SubscriptionService)
 ) {
     var UserService = {
         /**
@@ -17,6 +17,7 @@ with (
         createUser: (info, callback) => {
             if (info.email && info.password) {
                 info.type = 'user'
+                info.subscribed = false
                 new User(info).save(
                     (u) => {
                         callback(u)
@@ -33,9 +34,19 @@ with (
             var info = { email: user.email, password: user.password }
             var dbUser = UserService.findUser(info)
 
-            // Update it
-            dbUser.update(user, clbk)
-            dump(dataPool.export('json'))
+            if (dbUser) {
+                // Update it
+                dbUser.update(user, clbk)
+
+                if (user.subscribed) {
+                    // Subiscribe it if not yet
+                    var subsc = findSubscription(user.username)
+                    if (!subsc) {
+                        subscribeUser(user)
+                    }
+                }
+                dump(dataPool.export('json'))
+            }
         }
     }
 }

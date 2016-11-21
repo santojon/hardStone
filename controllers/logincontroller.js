@@ -26,6 +26,12 @@ with (
                         } else {
                             showError('Incorrect information!')
                         }
+                    } else if (email === logU.username) {
+                        if (password === logU.password) {
+                            logUser(logU)
+                        } else {
+                            showError('Incorrect information!')
+                        }
                     }
                 }
             }

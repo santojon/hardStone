@@ -6,5 +6,6 @@ User: {
     password: string,
     email: string,
     gender: string,
+    subscribed: boolean,
     image: string
 }

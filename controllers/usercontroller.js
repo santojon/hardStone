@@ -26,6 +26,18 @@ with (
             document.getElementById('userPassword').value = curr.password
             document.getElementById('userEmail').value = curr.email
             document.getElementById('userImage').value = curr.image
+
+            if (curr.subscribed) {
+                document.getElementById('sub-place').innerHTML = 
+                    '<input id="sb-tournament" type="checkbox" checked disabled>\
+                        Subscribed to tournament\
+                    </label>'
+            } else {
+                document.getElementById('sub-place').innerHTML = 
+                    '<input id="sb-tournament" type="checkbox">\
+                        Subscribe to tournament\
+                    </label>'
+            }
         },
         /**
          * Go away
@@ -41,24 +53,33 @@ with (
         /**
          * Update method for user in session
          */
-        updateCurrentUser: (firstName, lastName, username, gender, password, email, image) => {
-            UserController.updateUser(
-                new User({
-                    firstName: firstName,
-                    lastName: lastName,
-                    username: username,
-                    gender: gender,
-                    password: password,
-                    email: email,
-                    image: image,
-                    type: _session.currentUser.type
-                }),
-                (usr) => {
-                    console.log(usr)
-                    _session.currentUser = usr || _session.currentUser
-                    showSuccess('User info updated successfully!')
-                }
-            )
+        updateCurrentUser: (firstName, lastName, username, gender, password, email, image, sub) => {
+            if (username === '') {
+                showError('You should create a username!')
+            } else {
+                UserController.updateUser(
+                    new User({
+                        firstName: firstName,
+                        lastName: lastName,
+                        username: username,
+                        gender: gender,
+                        password: password,
+                        email: email,
+                        image: image,
+                        subscribed: sub,
+                        type: _session.currentUser.type
+                    }),
+                    (usr) => {
+                        console.log(usr)
+                        _session.currentUser = usr || _session.currentUser
+                        if (usr.username) {
+                            showSuccess('User info updated successfully!')
+                        } else {
+                            showError('Fill the fields with the necessary info!')
+                        }
+                    }
+                )
+            }
         },
         /**
          * Update method for user

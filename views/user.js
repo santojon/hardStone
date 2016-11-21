@@ -19,7 +19,8 @@ pages.User = (params) => {
                 document.getElementById('userGender').value,
                 document.getElementById('userPassword').value,
                 document.getElementById('userEmail').value,
-                document.getElementById('userImage').value
+                document.getElementById('userImage').value,
+                document.getElementById('sb-tournament').checked
             )
         }
     }
