@@ -48,4 +48,4 @@ var Myjson_bridge = {
  * Import existent databases to in-memory
  */
 // PhpbridgeService.getDb()
-MyjsonbridgeService.getDb()
+// MyjsonbridgeService.getDb()
