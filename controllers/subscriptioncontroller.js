@@ -16,12 +16,15 @@ with (
                                 '" type="checkbox"></td>'
 
                 var set = sub.status ? checked : unchecked
+                var date = sub.created instanceof Date ?
+                                sub.created.toDateString() :
+                                    new Date(sub.created).toDateString()
 
                 results.push(
                     '<tr>\
                         <td class="col-md-3 col-sm-3 col-lg-3">' + sub.user.username + '</td>\
                         <td class="col-md-5 col-sm-5 col-lg-5">' + sub.user.email + '</td>\
-                        <td class="col-md-4 col-sm-4 col-lg-4">' + sub.created.toDateString() + '</td>\
+                        <td class="col-md-4 col-sm-4 col-lg-4">' + date + '</td>\
                     ' + set + '</tr>'
                 )
             })
