@@ -7,5 +7,9 @@
         <div class="col-md-12 col-sm-12 col-lg-12">
             <h2>LabHard HearthStone Tournament</h2>
         </div>
+
+        <div id="home-content-dynamic" class="col-md-12 col-sm-12 col-lg-12">
+            
+        </div>
     </div>
 </div>

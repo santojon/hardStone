@@ -1,13 +1,19 @@
+/**
+ * Mappings to in-memory dataPool
+ */
 dataPool.map(
     User,
     Subscription
 )
 
+
 /**
  * Map paths to bridges
+ * External and/or not in-memory databases
  */
 
 // PHP bridge
+// Local database
 var Php_bridge = {
     type: 'php',
     base: 'data/php_bridge',
@@ -39,7 +45,7 @@ var Myjson_bridge = {
 }
 
 /**
- * Import existent databases
+ * Import existent databases to in-memory
  */
-PhpbridgeService.getDb()
+// PhpbridgeService.getDb()
 MyjsonbridgeService.getDb()

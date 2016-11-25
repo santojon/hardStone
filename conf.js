@@ -11,7 +11,8 @@ var appConfig = {
             'vendor/bootstrap.min',
         ],
         externalScripts: [
-            'libs/frgg/frgg.js'
+            'libs/frgg/frgg.js',
+            'data/homecontent.js'
         ]
     },
     back: {

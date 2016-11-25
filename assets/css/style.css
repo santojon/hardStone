@@ -342,6 +342,30 @@ a.header-link:hover {
     padding-top: 170px;
 }
 
+.hs_sec_img_r {
+    float: right;
+}
+
+.hs_sec_img_l {
+    float: left;
+}
+
+.hs_sec_p_l {
+    float: left;
+}
+
+.hs_sec_p_r {
+    float: right;
+}
+
+.hs_section {
+    padding-bottom: 10px;
+}
+
+.hs_sign {
+    padding-top: 5px;
+}
+
 .btn-primary {
     background-color: #586D9E;
 }
