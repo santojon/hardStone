@@ -31,6 +31,6 @@ var appConfig = {
         dataPool: 'Bhdr',
         classLoader: 'Bwf',
         bwfDomain: true,
-        bootstrap: true
+        bootstrap: false
     }
 }
