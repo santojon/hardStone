@@ -14,7 +14,6 @@ with (
          */
         saveSubscriptions: (subs) => {
             subs.forEach((sub) => {
-                console.log(sub)
                 if(sub.id) {
                     var s = SubscriptionService.getSubscription(sub.id)
                     s.status = sub.status
@@ -43,7 +42,6 @@ with (
          * Subscribe passed user
          */
         subscribeUser: (user) => {
-            console.log(user)
             new Subscription({
                 user: user,
                 status: false,
@@ -51,7 +49,6 @@ with (
             }).save((s) => {
                 dump(dataPool.export('json'))
             })
-            console.log(dataPool.export('json'))
         }
     }
 }

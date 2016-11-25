@@ -27,11 +27,33 @@ new User({
     subscribed: true,
 }).save((u) => {
     console.log(u)
-    new Subscription({
-        user: u,
-        status: false,
-        created: new Date()
-    }).save((s) => {
-        console.log(s)
-    })
+    UserController.updateUser(u)
+})
+
+new User({
+    firstName: 'Raphael',
+    lastName: 'Tulyo',
+    username: 'crazybird',
+    type: 'user',
+    password: 'test',
+    email: 'rtsd@cin.ufpe.br',
+    gender: 'Male',
+    subscribed: true,
+}).save((u) => {
+    console.log(u)
+    UserController.updateUser(u)
+})
+
+new User({
+    firstName: 'Vinícius',
+    lastName: 'Emanuel',
+    username: 'vems',
+    type: 'user',
+    password: 'test',
+    email: 'vems@cin.ufpe.br',
+    gender: 'Male',
+    subscribed: true,
+}).save((u) => {
+    console.log(u)
+    UserController.updateUser(u)
 })

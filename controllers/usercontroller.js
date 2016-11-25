@@ -70,7 +70,6 @@ with (
                         type: _session.currentUser.type
                     }),
                     (usr) => {
-                        console.log(usr)
                         _session.currentUser = usr || _session.currentUser
                         if (usr.username) {
                             showSuccess('User info updated successfully!')

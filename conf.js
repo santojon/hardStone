@@ -12,7 +12,7 @@ var appConfig = {
         ],
         externalScripts: [
             'libs/frgg/frgg.js',
-            'data/homecontent.js'
+            'data/content/homecontent.js'
         ]
     },
     back: {

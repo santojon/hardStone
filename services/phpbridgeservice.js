@@ -36,7 +36,6 @@ with (Sgfd.Base) {
          * Saves entire database to file
          */
         dump: (text) => {
-            console.log(text)
             // create form to do post
             var data = new FormData()
 

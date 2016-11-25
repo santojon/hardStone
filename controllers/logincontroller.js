@@ -55,7 +55,6 @@ with (
             document.getElementById('my_avatar').title = user.firstName
 
             pages.User()
-            console.log(user)
             if (user.type === 'admin') {
                 showItem('admin-click')
             } else {
