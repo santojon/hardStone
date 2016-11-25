@@ -7,6 +7,7 @@ var appConfig = {
         ],
         scripts: [
             'utils',
+            'validators',
             'vendor/jquery.min',
             'vendor/bootstrap.min',
         ],
@@ -31,6 +32,6 @@ var appConfig = {
         dataPool: 'Bhdr',
         classLoader: 'Bwf',
         bwfDomain: true,
-        bootstrap: false
+        bootstrap: true
     }
 }

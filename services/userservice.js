@@ -16,14 +16,18 @@ with (
          */
         createUser: (info, callback) => {
             if (info.email && info.password) {
-                info.type = 'user'
-                info.subscribed = false
-                new User(info).save(
-                    (u) => {
-                        callback(u)
-                    }
-                )
-                dump(dataPool.export('json'))
+                if (validEmail(info.email) && (User.find({email: info.email}) === null)) {
+                    info.type = 'user'
+                    info.subscribed = false
+                    new User(info).save(
+                        (u) => {
+                            callback(u)
+                        }
+                    )
+                    dump(dataPool.export('json'))
+                } else {
+                    showError('Incorrect information!')
+                }
             }
         },
         /**
