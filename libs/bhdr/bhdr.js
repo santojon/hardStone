@@ -540,8 +540,14 @@ function Bhdr(container, options) {
 
                     // For each 'table'
                     Object.keys(j).forEach(function(k) {
-                        // 'k' is the classname
-                        p[k] = new Object();
+
+                        // DB flags
+                        if ((k === '_locked') || (k === '_lockedTimes')) {
+                            p[k] = j[k];
+                        } else {
+                            // 'k' is the classname
+                            p[k] = new Object();
+                        }
 
                         // For each object in 'table'
                         Object.keys(j[k]).forEach(function(key) {

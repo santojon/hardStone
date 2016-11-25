@@ -51,6 +51,22 @@ function Sgfd(appConfig, options) {
                         });
                     }
                     
+                    // if not profuction flag, set to false
+                    if (conf['production'] === undefined) conf.production = false;
+
+                    // set production flags if true
+                    if (conf.production) {
+                        conf.bootstrap = false;
+                        conf['debug'] = {
+                            controllers: false,
+                            services: false
+                        };
+                        conf['transactional'] = {
+                            controllers: false,
+                            services: false
+                        };
+                    }
+
                     // if no container, it will be the window
                     if (!conf['container']) conf.container = window;
                 }
@@ -602,5 +618,93 @@ Sgfd.Base = {
         });
 
         return merge_options(Sgfd.Base, result);
+    },
+    /**
+     * Used for debug purposes
+     */
+    trace: function(obj, key, args) {
+        var metaName = ((obj.metaName !== undefined)
+            && (obj.metaName !== null)) ? obj.metaName : 'Log trace';
+        console.log('------ ' + metaName + ':');
+        console.log('Route:  ', key);
+        console.log('Params:  ', args);
+        console.log('------ End ' + metaName);
     }
+};
+
+/**
+ * Represents a class to be used in routed objects creation
+ * Is used by default to create Controllers and Services
+ */
+Sgfd.ConfigurableRoutedClass = function(routes, options) {
+    var c = this;
+    c.prototype = {};
+
+    c.prototype.init = function(op) {
+        Object.keys(routes).forEach(function(key) {
+            if (key !== 'metaName') {
+                // If is debuggable
+                if (op.debug) {
+                    // If dumps the database
+                    if (op.transactional) {
+                        c.prototype[key] = function(args) {
+                             Sgfd.Base.trace(this, key, arguments);
+                            dump(dataPool.export('json'));
+
+                            return routes[key].apply(this, arguments);
+                        };
+                    // Not dump
+                    } else {
+                        c.prototype[key] = function(args) {
+                            Sgfd.Base.trace(this, key, arguments);
+                            return routes[key].apply(this, arguments);
+                        };
+                    }
+                // Not debuggable
+                } else {
+                    // transactional
+                    if (op.transactional) {
+                        c.prototype[key] = function(args) {
+                            dump(dataPool.export('json'));
+                            return routes[key].apply(this, arguments);
+                        };
+                    // not transactional
+                    } else {
+                        c.prototype[key] = routes[key];
+                    }
+                }
+            } else {
+                c.prototype[key] = routes[key];
+            }
+        });
+        return this;
+    }
+
+    return c.prototype.init(options);
+};
+
+/**
+ * Create a controller object based in ConfigurableRoutedClass
+ */
+Sgfd.Controller = function(routes, options) {
+    var defaultOp = {
+        debug: appConfig.conf.debug.controllers || false,
+        transactional: appConfig.conf.transactional.controllers || false
+    };
+    if ((options === null) || (options === undefined)) options = defaultOp;
+
+    return new Sgfd.ConfigurableRoutedClass(routes, options);
+};
+
+/**
+ * Create a service object based in ConfigurableRoutedClass
+ */
+Sgfd.Service = function(routes, options) {
+    var defaultOp = {
+        debug: appConfig.conf.debug.services || false,
+        transactional: appConfig.conf.transactional.services || false
+    };
+    if ((options === null) || (options === undefined)) options = defaultOp;
+
+    return new Sgfd.ConfigurableRoutedClass(routes, options);
 };

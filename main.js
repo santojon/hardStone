@@ -12,7 +12,6 @@ if (_session === null) {
     )
 }
 
-
 // set navbar clicks
 document.getElementById('home-click').onclick = () => {
     unselectItem('login-click')

@@ -1,7 +1,8 @@
 with (
     Sgfd.Base.autoMerge(LoginController, UserService)
 ) {
-    var UserController = {
+    var UserController = new Sgfd.Controller({
+        metaName: 'UserController',
         /**
          * Validate user to open its info page
          */
@@ -87,5 +88,5 @@ with (
             // From UserService
             updateUser(user, clbk)
         }
-    }
+    })
 }

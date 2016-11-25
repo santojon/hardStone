@@ -1,5 +1,6 @@
 with (Sgfd.Base) {
-    var HomeControler = {
+    var HomeControler = new Sgfd.Controller({
+        metaName: 'HomeControler',
         /**
          * Assert all is clear
          */
@@ -54,5 +55,5 @@ with (Sgfd.Base) {
             // put content into page
             cont.innerHTML = res.join('')
         }
-    }
+    })
 }

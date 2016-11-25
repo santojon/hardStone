@@ -1,7 +1,8 @@
 with (
     Sgfd.Base.autoMerge(SubscriptionService)
 ) {
-    var SubscriptionController = {
+    var SubscriptionController = new Sgfd.Controller({
+        metaName: 'SubscriptionController',
         /**
          * Return all subscriptions to screen
          */
@@ -38,5 +39,5 @@ with (
             // From SubscriptionService
             saveSubscriptions(subs)
         }
-    }
+    })
 }

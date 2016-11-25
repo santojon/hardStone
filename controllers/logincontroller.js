@@ -1,7 +1,8 @@
 with (
     Sgfd.Base.autoMerge(UserService)
 ) {
-    var LoginController = {
+    var LoginController = new Sgfd.Controller({
+        metaName: 'LoginController',
         /**
          * Sign or create an user
          * @param email: user email
@@ -61,5 +62,5 @@ with (
                 hideItem('admin-click')
             }
         }
-    }
+    })
 }

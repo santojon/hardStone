@@ -32,6 +32,15 @@ var appConfig = {
         dataPool: 'Bhdr',
         classLoader: 'Bwf',
         bwfDomain: true,
-        bootstrap: false
+        bootstrap: true,
+        debug: {
+            controllers: true,
+            services: true
+        },
+        transactional: {
+            controllers: false,
+            services: true
+        },
+        production: true
     }
 }
