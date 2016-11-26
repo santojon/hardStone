@@ -1,7 +1,7 @@
 // create (or get) session
 var _session = getSession()
 
-if (_session === null) {
+if ((_session === null) || (_session === undefined)) {
     _session = new Object({ currentUser: null })
     saveSession()
 } else if (_session['currentUser'] !== null) {

@@ -32,6 +32,7 @@ function Sgfd(appConfig, options) {
                     if (!back['controllers']) back['controllers'] = [];
                     if (!back['services']) back['services'] = [];
                     if (!back['views']) back['views'] = [];
+                    if (!back['bridges']) back['bridges'] = [];
 
                     if (!front['externalScripts']) front['externalScripts'] = [];
                     if (!front['externalStyles']) front['externalStyles'] = [];
@@ -59,11 +60,13 @@ function Sgfd(appConfig, options) {
                         conf.bootstrap = false;
                         conf['debug'] = {
                             controllers: false,
-                            services: false
+                            services: false,
+                            bridges: false
                         };
                         conf['transactional'] = {
                             controllers: false,
-                            services: false
+                            services: false,
+                            bridges: false
                         };
                     }
 
@@ -98,32 +101,34 @@ function Sgfd(appConfig, options) {
 
                         // Load back-end files
                         progressiveLoad(domainClasses, loadDomain, function() {
-                            progressiveLoad(services, loadService, function() {
-                                progressiveLoad(controllers, loadController, function() {
+                            progressiveLoad(bridges, loadBridge, function() {
+                                progressiveLoad(services, loadService, function() {
+                                    progressiveLoad(controllers, loadController, function() {
 
-                                    // Map the classes to 'database'
-                                    // TODO: change how to make this
-                                    progressiveLoad(['dataMappings.js'], loadScript, function() {
-                                        // If bootstrap data is set on
-                                        if (bootstrap) {
-                                            progressiveLoad(['bootstrap.js'], loadScript);
-                                        }
-                                    });
+                                        // Map the classes to 'database'
+                                        // TODO: change how to make this
+                                        progressiveLoad(['dataMappings.js'], loadScript, function() {
+                                            // If bootstrap data is set on
+                                            if (bootstrap) {
+                                                progressiveLoad(['bootstrap.js'], loadScript);
+                                            }
+                                        });
 
-                                    // Load front-end files
-                                    progressiveLoad(externalScripts, loadScript, function() {
-                                        progressiveLoad(scripts, loadScriptAsset, function() {
-                                            progressiveLoad(externalStyles, loadStyle, function() {
-                                                progressiveLoad(styles, loadStyleAsset, function() {
-                                                    progressiveLoad(views, loadView, function() {
-                                                        // Run main script
-                                                        progressiveLoad(['main.js'], loadScript);
+                                        // Load front-end files
+                                        progressiveLoad(externalScripts, loadScript, function() {
+                                            progressiveLoad(scripts, loadScriptAsset, function() {
+                                                progressiveLoad(externalStyles, loadStyle, function() {
+                                                    progressiveLoad(styles, loadStyleAsset, function() {
+                                                        progressiveLoad(views, loadView, function() {
+                                                            // Run main script
+                                                            progressiveLoad(['main.js'], loadScript);
+                                                        });
                                                     });
                                                 });
                                             });
                                         });
                                     });
-                                });
+                                })
                             });
                         });
                     });
@@ -289,6 +294,46 @@ Sgfd.Base = {
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = url;
+
+            // Then bind the event to the callback function.
+            // There are several events for cross browser compatibility.
+            if (i === (urls.length - 1)) {
+                //script.onreadystatechange = callback;
+                script.onload = callback;
+            }
+
+            // Fire the loading
+            head.appendChild(script);
+        });
+    },
+    /**
+     * Function responsible to fetch bridge scripts
+     */
+    loadBridge: function(url, callback) {
+        // Adding the script tag to the head as suggested before
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'data/bridges/' + url + 'bridge.js';
+
+        // Then bind the event to the callback function.
+        // There are several events for cross browser compatibility.
+        //script.onreadystatechange = callback;
+        script.onload = callback;
+
+        // Fire the loading
+        head.appendChild(script);
+    },
+    /**
+     * Function responsible to fetch service scripts
+     */
+    loadBridges: function(urls, callback) {
+        urls.forEach(function(url, i) {
+            // Adding the script tag to the head as suggested before
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'data/bridges/' + url + 'bridge.js';
 
             // Then bind the event to the callback function.
             // There are several events for cross browser compatibility.
@@ -622,41 +667,46 @@ Sgfd.Base = {
     /**
      * Used for debug purposes
      */
-    trace: function(obj, key, args) {
+    trace: function(obj, key, args, callback) {
         var metaName = ((obj.metaName !== undefined)
-            && (obj.metaName !== null)) ? obj.metaName : 'Log trace';
-        console.log('------ ' + metaName + ':');
-        console.log('Route:  ', key);
-        console.log('Params:  ', args);
-        console.log('------ End ' + metaName);
+            && (obj.metaName !== null)
+                && (obj.metaName !== '')) ?
+                    obj.metaName : 'NonMetaNamedClass';
+        console.log(metaName + '.' + key + '(', args, ')');
+        if (callback) callback();
     }
 };
 
 /**
  * Represents a class to be used in routed objects creation
- * Is used by default to create Controllers and Services
+ * Is used by default to create Controllers, Services etc.
  */
 Sgfd.ConfigurableRoutedClass = function(routes, options) {
     var c = this;
     c.prototype = {};
+    var cbk = null;
+
+    if (options['callback']) {
+        cbk = options.callback;
+    }
 
     c.prototype.init = function(op) {
         Object.keys(routes).forEach(function(key) {
-            if (key !== 'metaName') {
+            if (routes[key] instanceof Function) {
                 // If is debuggable
                 if (op.debug) {
                     // If dumps the database
                     if (op.transactional) {
                         c.prototype[key] = function(args) {
-                             Sgfd.Base.trace(this, key, arguments);
-                            dump(dataPool.export('json'));
+                             Sgfd.Base.trace(this, key, arguments, cbk);
+                            //dump(dataPool.export('json'));
 
                             return routes[key].apply(this, arguments);
                         };
                     // Not dump
                     } else {
                         c.prototype[key] = function(args) {
-                            Sgfd.Base.trace(this, key, arguments);
+                            Sgfd.Base.trace(this, key, arguments, cbk);
                             return routes[key].apply(this, arguments);
                         };
                     }
@@ -665,7 +715,8 @@ Sgfd.ConfigurableRoutedClass = function(routes, options) {
                     // transactional
                     if (op.transactional) {
                         c.prototype[key] = function(args) {
-                            dump(dataPool.export('json'));
+                            //dump(dataPool.export('json'));
+
                             return routes[key].apply(this, arguments);
                         };
                     // not transactional
@@ -703,6 +754,19 @@ Sgfd.Service = function(routes, options) {
     var defaultOp = {
         debug: appConfig.conf.debug.services || false,
         transactional: appConfig.conf.transactional.services || false
+    };
+    if ((options === null) || (options === undefined)) options = defaultOp;
+
+    return new Sgfd.ConfigurableRoutedClass(routes, options);
+};
+
+/**
+ * Create a controller object based in ConfigurableRoutedClass
+ */
+Sgfd.Bridge = function(routes, options) {
+    var defaultOp = {
+        debug: appConfig.conf.debug.bridges || false,
+        transactional: appConfig.conf.transactional.bridges || false
     };
     if ((options === null) || (options === undefined)) options = defaultOp;
 

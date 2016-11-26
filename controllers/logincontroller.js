@@ -16,20 +16,29 @@ with (
                 // create a new user
                 if (logU === null) {
                     createUser(info, (u) => {
-                        logUser(u)
+                        logUser(
+                            u,
+                            showSuccess('Welcome! Now is time to add some info about you.')
+                        )
                     })
                 }
                 // log existent user
                 else {
                     if (email === logU.email) {
                         if (password === logU.password) {
-                            logUser(logU)
+                            logUser(
+                                logU,
+                                showSuccess('Welcome back, ' + logU.firstName + '!')
+                            )
                         } else {
                             showError('Incorrect information!')
                         }
                     } else if (email === logU.username) {
                         if (password === logU.password) {
-                            logUser(logU)
+                            logUser(
+                                logU,
+                                showSuccess('Welcome back, ' + logU.firstName + '!')
+                            )
                         } else {
                             showError('Incorrect information!')
                         }
@@ -50,12 +59,13 @@ with (
          * Log user to session scope
          * @param user: the user to add to session
          */
-        logUser: (user) => {
+        logUser: (user, runnable) => {
             _session.currentUser = user
             saveSession()
             document.getElementById('my_avatar').title = user.firstName
 
             pages.User()
+            if (runnable) runnable
             if (user.type === 'admin') {
                 showItem('admin-click')
             } else {

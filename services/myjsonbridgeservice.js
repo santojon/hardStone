@@ -1,17 +1,23 @@
-with (Sgfd.Base) {
-    var MyjsonbridgeService = {
+with (
+    Sgfd.Base.autoMerge(MyjsonBridge)
+) {
+    var MyjsonbridgeService = new Sgfd.Service({
+        metaName: 'MyjsonbridgeService',
         /**
          * Saves entire database to external file
          */
         dump: (text) => {          
             try {
-                $.ajax({
-                    url: Myjson_bridge.bridgeTo('all'),
-                    type: 'PUT',
-                    data: text,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: 'json'
-                })
+                // create, build and send request
+                var xhr = new XMLHttpRequest()
+                xhr.open(
+                    'put',
+                    bridgeTo('all'),
+                    true
+                )
+
+                xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8')
+                xhr.send(text)
             } catch (ex) {
                 console.log(ex)
             }
@@ -25,7 +31,7 @@ with (Sgfd.Base) {
                 var xhr = new XMLHttpRequest()
                 xhr.open(
                     'get',
-                    Myjson_bridge.bridgeTo('all'),
+                    bridgeTo('all'),
                     true
                 )
 
@@ -39,7 +45,6 @@ with (Sgfd.Base) {
             } catch (ex) {
                 console.log(ex)
             }
-            
         }
-    }
+    })
 }

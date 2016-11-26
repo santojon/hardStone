@@ -21,7 +21,8 @@ var appConfig = {
         controllers: ['home', 'subscription', 'login'],
         services: ['phpbridge', 'myjsonbridge', 'subscription'],
         bwfDomains: ['user', 'subscription'],
-        views: ['home', 'status', 'admin', 'login']
+        views: ['home', 'status', 'admin', 'login'],
+        bridges: ['php', 'myjson']
     },
     conf: {
         appName: 'hardStone',
@@ -35,11 +36,13 @@ var appConfig = {
         bootstrap: true,
         debug: {
             controllers: true,
-            services: true
+            services: true,
+            bridges: true
         },
         transactional: {
             controllers: false,
-            services: true
+            services: true,
+            bridges: false
         },
         production: true
     }

@@ -1,7 +1,8 @@
 with (
     Sgfd.Base.autoMerge(MyjsonbridgeService)
 ) {
-    var SubscriptionService = {
+    var SubscriptionService = new Sgfd.Service({
+        metaName: 'SubscriptionService',
         /**
          * Get all subscriptions
          */
@@ -50,5 +51,5 @@ with (
                 dump(dataPool.export('json'))
             })
         }
-    }
+    })
 }

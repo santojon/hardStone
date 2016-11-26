@@ -1,5 +1,8 @@
-with (Sgfd.Base) {
-    var PhpbridgeService = {
+with (
+    Sgfd.Base.autoMerge(PhpBridge)
+) {
+    var PhpbridgeService = new Sgfd.Service({
+        metaName: 'PhpbridgeService',
         /**
          * Saves text to file in server
          */
@@ -26,7 +29,7 @@ with (Sgfd.Base) {
 
             xhr.open(
                 'post',
-                Php_bridge.bridgeTo('save'),
+                bridgeTo('save'),
                 true
             )
 
@@ -47,7 +50,7 @@ with (Sgfd.Base) {
 
             xhr.open(
                 'post',
-                Php_bridge.bridgeTo('dump'),
+                bridgeTo('dump'),
                 true
             )
 
@@ -61,7 +64,7 @@ with (Sgfd.Base) {
             var xhr = new XMLHttpRequest()
             xhr.open(
                 'get',
-                Php_bridge.bridgeTo('getDb'),
+                bridgeTo('getDb'),
                 true
             )
 
@@ -73,5 +76,5 @@ with (Sgfd.Base) {
 
             xhr.send(null)
         }
-    }
+    })
 }
