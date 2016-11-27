@@ -31,7 +31,6 @@ with (
                     dateCol = '<td class="col-md-2 col-sm-2 col-lg-2">' + resDate + '</td>'
                 }
 
-                console.log(sub)
                 results.push(
                     '<tr>\
                         <td class="col-md-2 col-sm-2 col-lg-2">' + sub.user.firstName + ' ' + sub.user.lastName + '</td>\
