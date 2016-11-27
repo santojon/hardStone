@@ -9,6 +9,8 @@ with (
         getSubscriptions: () => {
             var results = []
 
+            // From SubscriptionService
+            // Fill the subscriptions table
             getSubscriptions().forEach((sub) => {
                 var checked = '<td class="col-md-1 col-sm-1 col-lg-1"><input id="' + sub.id() +
                                 '" type="checkbox" checked="true" disabled></td>'

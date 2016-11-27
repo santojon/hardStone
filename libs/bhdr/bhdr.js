@@ -13,6 +13,10 @@ function Bhdr(container, options) {
     // The pool itself
     pool.prototype = {
         /**
+         * Locked status of the DB
+         */
+        locked: data._locked,
+        /**
          * Function responsible to initialize the pool
          */
         init: function() {
@@ -566,6 +570,7 @@ function Bhdr(container, options) {
                     break;
             }
 
+            data._locked = false;
             return result;
         }
     };
