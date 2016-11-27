@@ -18,6 +18,10 @@ with (
                 if(sub.id) {
                     var s = SubscriptionService.getSubscription(sub.id)
                     s.status = sub.status
+                    if (s.status) {
+                        s.responsible = _session.currentUser
+                        s.responded = new Date()
+                    }
                 }
             })
 

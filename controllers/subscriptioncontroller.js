@@ -11,7 +11,7 @@ with (
 
             getSubscriptions().forEach((sub) => {
                 var checked = '<td class="col-md-1 col-sm-1 col-lg-1"><input id="' + sub.id() +
-                                '" type="checkbox" checked="true"></td>'
+                                '" type="checkbox" checked="true" disabled></td>'
 
                 var unchecked = '<td class="col-md-1 col-sm-1 col-lg-1"><input id="' + sub.id() +
                                 '" type="checkbox"></td>'
@@ -21,11 +21,24 @@ with (
                                 sub.created.toDateString() :
                                     new Date(sub.created).toDateString()
 
+                var dateCol = '<td class="col-md-2 col-sm-2 col-lg-2"></td>'
+                if (!isNaN(sub.responded.getTime())) {
+                    var resDate = sub.responded instanceof Date ?
+                                sub.responded.toDateString() :
+                                    new Date(sub.responded).toDateString()
+                    dateCol = '<td class="col-md-2 col-sm-2 col-lg-2">' + resDate + '</td>'
+                }
+
+                console.log(sub)
                 results.push(
                     '<tr>\
-                        <td class="col-md-3 col-sm-3 col-lg-3">' + sub.user.username + '</td>\
-                        <td class="col-md-5 col-sm-5 col-lg-5">' + sub.user.email + '</td>\
-                        <td class="col-md-4 col-sm-4 col-lg-4">' + date + '</td>\
+                        <td class="col-md-2 col-sm-2 col-lg-2">' + sub.user.firstName + ' ' + sub.user.lastName + '</td>\
+                        <td class="col-md-2 col-sm-2 col-lg-2">' + sub.user.username + '</td>\
+                        <td class="col-md-2 col-sm-2 col-lg-2">' + sub.user.email + '</td>\
+                        <td class="col-md-2 col-sm-2 col-lg-2">' + date + '</td>\
+                        ' + dateCol +
+                        '<td class="col-md-2 col-sm-2 col-lg-2">' + sub.responsible.firstName +
+                        ' ' + sub.responsible.lastName +  '</td>\
                     ' + set + '</tr>'
                 )
             })
