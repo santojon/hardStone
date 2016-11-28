@@ -7,7 +7,7 @@
             </button>
 
             <button title="Manage your account" id="account-click" class="pull-right mRight5 btn btn-info">
-                <span class="fa fa-user"></span>
+                <span class="fa fa-user"></span> Your account
             </button>
         </h2>
         <table class="table table-striped">
@@ -26,7 +26,7 @@
             </tbody>
         </table>
         <button title="Save" id="admin-save-btn" class="pull-right btn btn-success">
-            <span class="fa fa-save"></span>
+            <span class="fa fa-save"></span> Save
         </button>
     </div>
 </div>

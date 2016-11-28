@@ -369,3 +369,48 @@ a.header-link:hover {
 .btn-primary {
     background-color: #586D9E;
 }
+
+.img-tournament-usr {
+    width: 20px;
+    height: 20px;
+}
+
+div.jQBracket .team .label {
+    color: #000000 !important;
+}
+
+div.jQBracket .team.highlight {
+    background-color: #cccccc !important;
+}
+
+div.jQBracket .team.lose {
+    background-color: #ffb3b3 !important;
+}
+
+div.jQBracket .team.lose.highlight {
+    background-color: #DDAA00 !important;
+}
+
+div.jQBracket .team.win {
+    background-color: #ced4e3 !important;
+}
+
+div.jQBracket .team.lose .score {
+    color: #ff4d4d !important;
+}
+
+div.jQBracket .team.win .score {
+    color: #586D9E !important;
+}
+
+div.jQBracket .team.win.highlight {
+    background-color: #33CC00 !important;
+}
+
+div.jQBracket .team.lose.highlight .score {
+    color: #cc9c00 !important;
+}
+
+div.jQBracket .team.win.highlight .score {
+    color: #269900 !important;
+}

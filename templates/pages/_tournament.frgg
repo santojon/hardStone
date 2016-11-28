@@ -1,0 +1,18 @@
+<div id="tournament" class="main container hidden">
+    <div class="col-md-12 col-sm-12 col-lg-12">
+        <h2>Tournament</h2>
+    </div>
+
+    <div id="tournament-brackets" class="col-md-12 col-sm-12 col-lg-12">
+    </div>
+
+    <div id="match-details" class="col-md-12 col-sm-12 col-lg-12 hidden">
+        <div id="match-details-content">
+        </div>
+        <div class="modal-footer">
+            <button title="Close" type="button" class="btn btn-default" id="match-details-close">
+                <span class="fa fa-close"></span> Close
+            </button>
+        </div>
+    </div>
+</div>

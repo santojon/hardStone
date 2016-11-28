@@ -3,25 +3,28 @@ var appConfig = {
         styles: [
             'style',
             'vendor/bootstrap.min',
-            'vendor/font-awesome.min'
+            'vendor/font-awesome.min',
+            'vendor/bracket.min'
         ],
         scripts: [
             'utils',
             'validators',
             'vendor/jquery.min',
             'vendor/bootstrap.min',
+            'vendor/bracket.min'
         ],
         externalScripts: [
             'libs/frgg/frgg.js',
-            'data/content/homecontent.js'
+            'data/content/homecontent.js',
+            'data/content/tournamentcontent.js'
         ]
     },
     back: {
         full: ['user'],
-        controllers: ['home', 'subscription', 'login'],
+        controllers: ['home', 'subscription', 'login', 'tournament'],
         services: ['phpbridge', 'myjsonbridge', 'subscription'],
         bwfDomains: ['user', 'subscription'],
-        views: ['home', 'status', 'admin', 'login'],
+        views: ['home', 'tournament', 'admin', 'login'],
         bridges: ['php', 'myjson']
     },
     conf: {
@@ -35,15 +38,15 @@ var appConfig = {
         bwfDomain: true,
         bootstrap: true,
         debug: {
-            controllers: true,
-            services: true,
-            bridges: true
+            controllers: false,
+            services: false,
+            bridges: false
         },
         transactional: {
             controllers: false,
             services: true,
             bridges: false
         },
-        production: true
+        production: false
     }
 }

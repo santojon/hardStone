@@ -4,6 +4,13 @@ with (
     var SubscriptionController = new Sgfd.Controller({
         metaName: 'SubscriptionController',
         /**
+         * Get all subscriptions by parameters object
+         */
+        getSubscriptionsBy: (obj) => {
+            // From service
+            return getSubscriptionsBy(obj)
+        },
+        /**
          * Return all subscriptions to screen
          */
         getSubscriptions: () => {
