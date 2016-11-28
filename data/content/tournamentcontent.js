@@ -15,7 +15,8 @@ var tournamentContent = {
                             {
                                 hero: 'mage',
                                 win: true
-                            }, {
+                            },
+                            {
                                 hero: 'shaman',
                                 win: false
                             }
@@ -24,7 +25,8 @@ var tournamentContent = {
                             {
                                 hero: 'priest',
                                 win: true
-                            }, {
+                            },
+                            {
                                 hero: 'shaman',
                                 win: false
                             }
@@ -33,7 +35,8 @@ var tournamentContent = {
                             {
                                 hero: 'druid',
                                 win: false
-                            }, {
+                            },
+                            {
                                 hero: 'shaman',
                                 win: true
                             }
@@ -42,7 +45,8 @@ var tournamentContent = {
                             {
                                 hero: 'druid',
                                 win: false
-                            }, {
+                            },
+                            {
                                 hero: 'mage',
                                 win: true
                             }
@@ -51,7 +55,8 @@ var tournamentContent = {
                             {
                                 hero: 'druid',
                                 win: true
-                            }, {
+                            },
+                            {
                                 hero: 'hunter',
                                 win: false
                             }

@@ -87,9 +87,27 @@ with (Sgfd.Base) {
                     // set user data to details view
                     setMatchUsersDetails(users)
 
+                    var score = [0, 0]
                     rounds.forEach((round) => {
+                        if (round[0].win) score[0] = score[0] + 1
+                        if (round[1].win) score[1] = score[1] + 1
                         setMatchresultDetails(round)
                     })
+                    
+                    var isWinner0 = (score[0] > score[1]) ? 'winner' : 'loser'
+                    var isWinner1 = (score[0] < score[1]) ? 'winner' : 'loser'
+                    
+                    var view = document.getElementById('match-details-tb-footer')
+                    view.innerHTML =
+                        '<td class="col-md-6 col-sm-6 col-lg-6 '
+                            + isWinner0 + '"><h4>' + score[0] + '</h4></td>' +
+                        '<td class="col-md-6 col-sm-6 col-lg-6 '
+                            + isWinner1 + '"><h4>' + score[1] + '</h4></td>'
+                    
+                    // put back users info
+                    rounds.reverse()
+                    rounds.push(users)
+                    rounds.reverse()
                 }
             }
         },
@@ -97,22 +115,35 @@ with (Sgfd.Base) {
          * Add users details to detailed view
          */
         setMatchUsersDetails: (users) => {
-            var view = document.getElementById('match-details-content')
-            view.innerHTML = 'asdasdasdasdasd'
-
-            console.log(users)
+            var left = document.getElementById('left-user')
+            var right = document.getElementById('right-user')
+            
+            document.getElementById('match-left-user').innerHTML = users[0].username
+            document.getElementById('match-right-user').innerHTML = users[1].username
+            
+            left.innerHTML = '<img class="match-img" src="' + users[0].image + '">'
+            right.innerHTML = '<img class="match-img" src="' + users[1].image + '">'
         },
         /**
          * Add result row in detailed view
          */
         setMatchresultDetails: (round) => {
-            var view = document.getElementById('match-details-content')
+            var result = []
+            var view = document.getElementById('match-details-tb-body')
+            
+            var isWinner0 = round[0].win ? 'winner' : 'loser'
+            var isWinner1 = round[1].win ? 'winner' : 'loser'
 
-            console.log(round[0].hero)
-            console.log(round[0].win)
-
-            console.log(round[1].hero)
-            console.log(round[1].win)
+            result.push(
+                '<tr>\
+                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner0 + '">'
+                        + round[0].hero + '<img src="assets/images/' + round[0].hero + '.jpg"></td>\
+                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner1 + '">'
+                        + round[1].hero + '<img src="assets/images/' + round[1].hero + '.jpg"></td>\
+                    ' + '</tr>'
+            )
+            
+            view.innerHTML = result.join('')
 
             document.getElementById('match-details-close').onclick = () => {
                 hideItem('match-details')

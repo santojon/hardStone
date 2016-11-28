@@ -375,6 +375,25 @@ a.header-link:hover {
     height: 20px;
 }
 
+.match-img {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.winner {
+    background-color: #ced4e3 !important;
+    text-align: center;
+}
+
+.loser {
+    background-color: #ffb3b3 !important;
+    text-align: center;
+}
+
+.spacer {
+    margin-top: 30px !important;
+}
+
 div.jQBracket .team .label {
     color: #000000 !important;
 }

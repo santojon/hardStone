@@ -1,4 +1,4 @@
-pages.Status = (params) => {
+pages.Tournament = (params) => {
     hideOthers('tournament')
 
     with (TournamentController) {
