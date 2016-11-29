@@ -76,9 +76,11 @@ with (
             saveSession()
             document.getElementById('my_avatar').title = user.firstName
             if ((typeof user.image) === 'string') {
-                document.getElementById('my_avatar').innerHTML =
-                    '<img class="navbar-brand-logo nav-photo"\
-                            src="' + user.image + '">'
+                if (user.image !== '') {
+                    document.getElementById('my_avatar').innerHTML =
+                        '<img class="navbar-brand-logo nav-photo"\
+                                src="' + user.image + '">'
+                }
             } else {
                 document.getElementById('my_avatar').innerHTML =
                     '<img class="navbar-brand-logo nav-photo"\

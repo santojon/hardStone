@@ -5,6 +5,8 @@ with (Sgfd.Base) {
          * Get data from content provider and render
          */
         index: () => {
+            var _teams = TournamentController.assembleTeamsData()
+            tournamentContent.teams = _teams
             // Create torunament using Bracket.js
             $(function() {
                 $('#tournament-brackets').bracket({
