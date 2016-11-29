@@ -10,17 +10,29 @@ with (
          */
         signIn: (email, password) => {
             with (LoginController) {
-                var info = { email: email, password: password }
+                var info = { email: email }
                 var logU = findUser(info)
 
                 // create a new user
+                var uu = findUser({ username: email })
                 if (logU === null) {
-                    createUser(info, (u) => {
-                        logUser(
-                            u,
-                            showSuccess('Welcome! Now is time to add some info about you.')
-                        )
-                    })
+                    if (uu) {
+                        if (password === uu.password) {
+                            logUser(
+                                uu,
+                                showSuccess('Welcome back, ' + uu.firstName + '!')
+                            )
+                        } else {
+                            showError('Incorrect information!')
+                        }
+                    } else {
+                        createUser(info, (u) => {
+                            logUser(
+                                u,
+                                showSuccess('Welcome! Now is time to add some info about you.')
+                            )
+                        })
+                    }
                 }
                 // log existent user
                 else {

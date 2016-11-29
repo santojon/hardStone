@@ -88,21 +88,36 @@ with (Sgfd.Base) {
                     setMatchUsersDetails(users)
 
                     var score = [0, 0]
+                    var res = ''
                     rounds.forEach((round) => {
                         if (round[0].win) score[0] = score[0] + 1
                         if (round[1].win) score[1] = score[1] + 1
-                        setMatchresultDetails(round)
+                        res = res + setMatchresultDetails(round)
                     })
+
+                    var vv = document.getElementById('match-details-tb-body')
+                    vv.innerHTML = res
+
+                    document.getElementById('match-details-close').onclick = () => {
+                        hideItem('match-details')
+                        showItem('tournament-brackets')
+                    }
+                    hideItem('tournament-brackets')
+                    showItem('match-details')
                     
                     var isWinner0 = (score[0] > score[1]) ? 'winner' : 'loser'
                     var isWinner1 = (score[0] < score[1]) ? 'winner' : 'loser'
+                    var icon0 = (score[0] > score[1]) ? '<span class="fa fa-check fa-3x"></span>'
+                        : '<span class="fa fa-close fa-3x"></span>' 
+                    var icon1 = (score[0] < score[1]) ? '<span class="fa fa-check fa-3x"></span>'
+                        : '<span class="fa fa-close fa-3x"></span>'
                     
                     var view = document.getElementById('match-details-tb-footer')
                     view.innerHTML =
                         '<td class="col-md-6 col-sm-6 col-lg-6 '
-                            + isWinner0 + '"><h4>' + score[0] + '</h4></td>' +
+                            + isWinner0 + '"><h3>' + icon0 + '</h3></td>' +
                         '<td class="col-md-6 col-sm-6 col-lg-6 '
-                            + isWinner1 + '"><h4>' + score[1] + '</h4></td>'
+                            + isWinner1 + '"><h3>' + icon1 + '</h3></td>'
                     
                     // put back users info
                     rounds.reverse()
@@ -129,28 +144,28 @@ with (Sgfd.Base) {
          */
         setMatchresultDetails: (round) => {
             var result = []
-            var view = document.getElementById('match-details-tb-body')
             
             var isWinner0 = round[0].win ? 'winner' : 'loser'
             var isWinner1 = round[1].win ? 'winner' : 'loser'
+            var icon0 = round[0].win ? '<span class="fa fa-check fa-3x"></span>'
+                : '<span class="fa fa-close fa-3x"></span>' 
+            var icon1 = round[1].win ? '<span class="fa fa-check fa-3x"></span>'
+                : '<span class="fa fa-close fa-3x"></span>'
 
             result.push(
                 '<tr>\
-                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner0 + '">'
-                        + round[0].hero + '<img src="assets/images/' + round[0].hero + '.jpg"></td>\
-                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner1 + '">'
-                        + round[1].hero + '<img src="assets/images/' + round[1].hero + '.jpg"></td>\
+                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner0 +
+                        '"><img class="match-icon" title="' +  round[0].hero +
+                            '" src="assets/images/heroes/' + round[0].hero + '.png">'
+                        + icon0 + '</td>\
+                    <td class="col-md-6 col-sm-6 col-lg-6 ' + isWinner1 +
+                        '"><img class="match-icon" title="' +  round[1].hero +
+                            '" src="assets/images/heroes/' + round[1].hero + '.png">'
+                        + icon1 + '</td>\
                     ' + '</tr>'
             )
             
-            view.innerHTML = result.join('')
-
-            document.getElementById('match-details-close').onclick = () => {
-                hideItem('match-details')
-                showItem('tournament-brackets')
-            }
-            hideItem('tournament-brackets')
-            showItem('match-details')
+            return result.join('')
         }
     })
 }

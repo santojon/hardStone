@@ -10,4 +10,4 @@ dataPool.map(
  * Import existent databases to in-memory
  */
 // PhpbridgeService.getDb()
-// MyjsonbridgeService.getDb()
+MyjsonbridgeService.getDb()

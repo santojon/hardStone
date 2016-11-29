@@ -375,6 +375,15 @@ a.header-link:hover {
     height: 20px;
 }
 
+.space-top {
+    padding-top: 15px;
+}
+
+.match-icon {
+    width: 60px;
+    height: 60px;
+}
+
 .match-img {
     width: 100px !important;
     height: 100px !important;
@@ -392,6 +401,10 @@ a.header-link:hover {
 
 .spacer {
     margin-top: 30px !important;
+}
+
+.text-centered, #right-user, #left-user {
+    text-align: center !important;
 }
 
 div.jQBracket .team .label {
@@ -414,12 +427,14 @@ div.jQBracket .team.win {
     background-color: #ced4e3 !important;
 }
 
-div.jQBracket .team.lose .score {
+div.jQBracket .team.lose .score, table .fa-close {
     color: #ff4d4d !important;
+    vertical-align: middle;
 }
 
-div.jQBracket .team.win .score {
+div.jQBracket .team.win .score, table .fa-check {
     color: #586D9E !important;
+    vertical-align: middle;
 }
 
 div.jQBracket .team.win.highlight {

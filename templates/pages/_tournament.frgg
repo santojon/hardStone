@@ -8,7 +8,7 @@
 
     <div id="match-details" class="col-md-12 col-sm-12 col-lg-12 hidden">
         <div id="match-details-content" class="col-md-12 col-sm-12 col-lg-12">
-            <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="col-md-12 col-sm-12 col-lg-12 space-top">
                 <div id="left-user" class="col-md-6 col-sm-6 col-lg-6">
                 </div>
                 <div id="right-user" class="col-md-6 col-sm-6 col-lg-6">
@@ -18,8 +18,8 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th id="match-left-user" class="col-md-12 col-sm-12 col-lg-12"></th>
-                            <th id="match-right-user" class="col-md-12 col-sm-12 col-lg-12"></th>
+                            <th id="match-left-user" class="col-md-6 col-sm-6 col-lg-6 text-centered"></th>
+                            <th id="match-right-user" class="col-md-6 col-sm-6 col-lg-6 text-centered"></th>
                         </tr>
                     </thead>
                     <tbody id="match-details-tb-body">

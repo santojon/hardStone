@@ -38,9 +38,9 @@ var appConfig = {
         bwfDomain: true,
         bootstrap: true,
         debug: {
-            controllers: false,
-            services: false,
-            bridges: false
+            controllers: true,
+            services: true,
+            bridges: true
         },
         transactional: {
             controllers: false,

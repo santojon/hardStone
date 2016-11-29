@@ -49,4 +49,4 @@ document.getElementById('admin-click').onclick = () => {
 }
 
 // open home
-pages.Tournament()
+pages.Home()
