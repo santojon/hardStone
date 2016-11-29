@@ -20,11 +20,10 @@ var appConfig = {
         ]
     },
     back: {
-        full: ['user'],
-        controllers: ['home', 'subscription', 'login', 'tournament'],
-        services: ['phpbridge', 'myjsonbridge', 'subscription'],
+        controllers: ['home', 'subscription', 'login', 'tournament', 'user'],
+        services: ['phpbridge', 'myjsonbridge', 'subscription', 'user'],
         bwfDomains: ['user', 'subscription'],
-        views: ['home', 'tournament', 'admin', 'login'],
+        views: ['user', 'home', 'tournament', 'admin', 'login'],
         bridges: ['php', 'myjson']
     },
     conf: {
