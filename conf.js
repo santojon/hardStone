@@ -47,6 +47,6 @@ var appConfig = {
             services: true,
             bridges: false
         },
-        production: false
+        production: true
     }
 }

@@ -80,6 +80,15 @@ showError = (msg) => {
     })
 }
 
+showWarning = (msg) => {
+    setMessage(msg, 'globalWarningMessage')
+    showItem('globalWarningMessage')
+
+    $('#globalWarningMessage').delay(3000).slideUp(200, () => {
+        hideItem('globalWarningMessage')
+    })
+}
+
 showSuccess = (msg) => {
     setMessage(msg, 'globalSuccessMessage')
     showItem('globalSuccessMessage')
