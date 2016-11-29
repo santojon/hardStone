@@ -16,7 +16,7 @@ with (
                 // create a new user
                 var uu = findUser({ username: email })
                 if (logU === null) {
-                    if (uu) {
+                    if (uu !== null) {
                         if (password === uu.password) {
                             logUser(
                                 uu,
@@ -26,7 +26,7 @@ with (
                             showError('Incorrect information!')
                         }
                     } else {
-                        createUser(info, (u) => {
+                        createUser({ email: email, password: password }, (u) => {
                             logUser(
                                 u,
                                 showSuccess('Welcome! Now is time to add some info about you.')

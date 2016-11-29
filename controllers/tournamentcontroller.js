@@ -42,8 +42,8 @@ with (Sgfd.Base) {
                 case "entry-default-win":
                 case "entry-complete":
                     container.append(
-                        '<img class="img-tournament-usr" src="' + data.user.image + '" /> '
-                    ).append(data.user.username)
+                        '<img class="img-tournament-usr" src="' + data.user.image + '" >'
+                    ).append('  ' + data.user.username)
                     return;
             }
         },
@@ -138,8 +138,14 @@ with (Sgfd.Base) {
             document.getElementById('match-left-user').innerHTML = users[0].username
             document.getElementById('match-right-user').innerHTML = users[1].username
             
-            left.innerHTML = '<img class="match-img" src="' + users[0].image + '">'
-            right.innerHTML = '<img class="match-img" src="' + users[1].image + '">'
+            left.innerHTML = '<img class="match-img" src="' + users[0].image + '" >' +
+                                '<div id="main-banner-content">' +
+                                    '<img class="match-img img-super" src="assets/images/frame.png">' +
+                                '</div>'
+            right.innerHTML = '<img class="match-img" src="' + users[1].image + '" >' +
+                                '<div id="main-banner-content">' +
+                                    '<img class="match-img img-super" src="assets/images/frame.png">' +
+                                '</div>'
         },
         /**
          * Add result row in detailed view
