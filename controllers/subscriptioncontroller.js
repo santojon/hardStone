@@ -4,6 +4,13 @@ with (
     var SubscriptionController = new Sgfd.Controller({
         metaName: 'SubscriptionController',
         /**
+         * Get all subscriptions by parameters object
+         */
+        getSubscriptionsBy: (obj) => {
+            // From service
+            return getSubscriptionsBy(obj)
+        },
+        /**
          * Return all subscriptions to screen
          */
         getSubscriptions: () => {
@@ -24,7 +31,7 @@ with (
                                     new Date(sub.created).toDateString()
 
                 var dateCol = '<td class="col-md-2 col-sm-2 col-lg-2"></td>'
-                if (!isNaN(sub.responded.getTime())) {
+                if ((sub.responded['getTime']) && (!isNaN(sub.responded.getTime()))) {
                     var resDate = sub.responded instanceof Date ?
                                 sub.responded.toDateString() :
                                     new Date(sub.responded).toDateString()

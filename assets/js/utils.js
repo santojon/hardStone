@@ -80,6 +80,15 @@ showError = (msg) => {
     })
 }
 
+showWarning = (msg) => {
+    setMessage(msg, 'globalWarningMessage')
+    showItem('globalWarningMessage')
+
+    $('#globalWarningMessage').delay(3000).slideUp(200, () => {
+        hideItem('globalWarningMessage')
+    })
+}
+
 showSuccess = (msg) => {
     setMessage(msg, 'globalSuccessMessage')
     showItem('globalSuccessMessage')
@@ -91,4 +100,12 @@ showSuccess = (msg) => {
 
 setMessage = (msg, item) => {
     document.getElementById(item).innerHTML = msg
+}
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
 }

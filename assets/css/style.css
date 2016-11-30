@@ -324,22 +324,24 @@ a.header-link:hover {
 }
 
 #home {
+    padding: 170px 0 30px 0;
     background-image: url('../images/hearthstone_title_art_by_breathing.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 435px;
 }
 
 .hs-logo-full {
     max-width: 350px;
-    padding: 40px 40px;
-    padding: 20px 25px 30px;
+    padding: 70px 0 30px 0;
     margin: 0 auto 25px;
-    margin-top: 50px;
+    margin-top: 5%;
+    background-image: url('../images/logo-family-hearthstone.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .home-content {
-    padding-top: 170px;
+    padding-top: 5%;
 }
 
 .hs_sec_img_r {
@@ -368,4 +370,94 @@ a.header-link:hover {
 
 .btn-primary {
     background-color: #586D9E;
+}
+
+.img-tournament-usr {
+    width: 20px;
+    height: 20px;
+}
+
+.space-top {
+    padding-top: 15px;
+}
+
+.match-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.match-img {
+    width: 200px !important;
+    height: 200px !important;
+    z-index: 1;
+}
+
+.match-img.img-super {
+    position: absolute;
+    width: 210px !important;
+    height: 210px !important;
+    top: -5px;
+    left: 33.3%;
+    text-align: center !important;
+    z-index: 10 !important;
+}
+
+.winner {
+    background-color: #ced4e3 !important;
+    text-align: center;
+}
+
+.loser {
+    background-color: #ffb3b3 !important;
+    text-align: center;
+}
+
+.spacer {
+    margin-top: 30px !important;
+}
+
+.text-centered, #right-user, #left-user {
+    text-align: center !important;
+}
+
+div.jQBracket .team .label {
+    color: #000000 !important;
+}
+
+div.jQBracket .team.highlight {
+    background-color: #cccccc !important;
+}
+
+div.jQBracket .team.lose {
+    background-color: #ffb3b3 !important;
+}
+
+div.jQBracket .team.lose.highlight {
+    background-color: #DDAA00 !important;
+}
+
+div.jQBracket .team.win {
+    background-color: #ced4e3 !important;
+}
+
+div.jQBracket .team.lose .score, table .fa-close {
+    color: #ff4d4d !important;
+    vertical-align: middle;
+}
+
+div.jQBracket .team.win .score, table .fa-check {
+    color: #586D9E !important;
+    vertical-align: middle;
+}
+
+div.jQBracket .team.win.highlight {
+    background-color: #33CC00 !important;
+}
+
+div.jQBracket .team.lose.highlight .score {
+    color: #cc9c00 !important;
+}
+
+div.jQBracket .team.win.highlight .score {
+    color: #269900 !important;
 }

@@ -31,7 +31,7 @@ document.getElementById('tournament-click').onclick = () => {
     unselectItem('login-click')
     unselectItem('my-things-click')
     selectItem('tournament-click')
-    pages.Status()
+    pages.Tournament()
 }
 
 document.getElementById('my-things-click').onclick = () => {

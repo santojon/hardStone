@@ -695,7 +695,7 @@ function Bhdr(container, options) {
 	/**
      * Order an array of objects by fields
      * @param field: the field to order by
-     * @param reverse: true to order descending
+     * @param order: true to order descending
      * @param rfunc: function to restrict compairson scope (if needed)
      */
 	Array.prototype.orderBy = function (field, order, rfunc) {

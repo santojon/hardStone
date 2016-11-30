@@ -3,3 +3,6 @@
 
 <div id ="globalSuccessMessage" class="alert alert-success alert-dismissible hidden">
 </div>
+
+<div id ="globalWarningMessage" class="alert alert-warning alert-dismissible hidden">
+</div>

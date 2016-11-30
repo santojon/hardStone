@@ -10,17 +10,29 @@ with (
          */
         signIn: (email, password) => {
             with (LoginController) {
-                var info = { email: email, password: password }
+                var info = { email: email }
                 var logU = findUser(info)
 
                 // create a new user
+                var uu = findUser({ username: email })
                 if (logU === null) {
-                    createUser(info, (u) => {
-                        logUser(
-                            u,
-                            showSuccess('Welcome! Now is time to add some info about you.')
-                        )
-                    })
+                    if (uu !== null) {
+                        if (password === uu.password) {
+                            logUser(
+                                uu,
+                                showSuccess('Welcome back, ' + uu.firstName + '!')
+                            )
+                        } else {
+                            showError('Incorrect information!')
+                        }
+                    } else {
+                        createUser({ email: email, password: password }, (u) => {
+                            logUser(
+                                u,
+                                showSuccess('Welcome! Now is time to add some info about you.')
+                            )
+                        })
+                    }
                 }
                 // log existent user
                 else {
@@ -63,6 +75,17 @@ with (
             _session.currentUser = user
             saveSession()
             document.getElementById('my_avatar').title = user.firstName
+            if ((typeof user.image) === 'string') {
+                if (user.image !== '') {
+                    document.getElementById('my_avatar').innerHTML =
+                        '<img class="navbar-brand-logo nav-photo"\
+                                src="' + user.image + '">'
+                }
+            } else {
+                document.getElementById('my_avatar').innerHTML =
+                    '<img class="navbar-brand-logo nav-photo"\
+                            src="assets/images/neutral.png">'
+            }
 
             pages.User()
             if (runnable) runnable

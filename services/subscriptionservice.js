@@ -4,6 +4,12 @@ with (
     var SubscriptionService = new Sgfd.Service({
         metaName: 'SubscriptionService',
         /**
+         * Get all subscriptions from DB by parameters object
+         */
+        getSubscriptionsBy: (obj) => {
+            return Subscription.findBy(obj)
+        },
+        /**
          * Get all subscriptions
          */
         getSubscriptions: () => {
