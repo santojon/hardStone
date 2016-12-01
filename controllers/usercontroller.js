@@ -31,13 +31,15 @@ with (
             if (curr.subscribed) {
                 document.getElementById('sub-place').innerHTML = 
                     '<input id="sb-tournament" type="checkbox" checked disabled>' +
-                    __('Subscribe to tournament') +
+                    __('Subscribed to tournament') +
                     '</label>'
             } else {
-                document.getElementById('sub-place').innerHTML = 
-                    '<input id="sb-tournament" type="checkbox">' +
-                    __('Subscribe to tournament') +
-                    '</label>'
+                if (curr.type !== 'admin') {
+                    document.getElementById('sub-place').innerHTML = 
+                        '<input id="sb-tournament" type="checkbox">' +
+                        __('Subscribe to tournament') +
+                        '</label>'
+                }
             }
 
             // Get location info

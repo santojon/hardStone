@@ -55,6 +55,7 @@ var _language = {
     'Welcome back, ': 'Bem vindo(a) de volta, ',
     'Incorrect information!': 'Informações incorretas!',
     'Subscribe to tournament': 'Inscrever-se no torneio',
+    'Subscribed to tournament': 'Inscrito no torneio',
     'Welcome! Now is time to add some info about you.': 'Bem vindo(a)! Adicione mais informações sobre você.',
     'Fill the fields with the necessary info!': 'Preencha os campos com os dados necessários!',
     'User info updated successfully!': 'Informações atualizadas com sucesso!',
