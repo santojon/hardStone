@@ -1,32 +1,32 @@
 <div id="admin" class="main container hidden">
     <div class="col-md-12 col-sm-12 col-lg-12">
         <h2>
-            Subscriptions
-            <button id="logout-click-admin" title="Sign out" class="pull-right btn btn-default">
+            __('Subscriptions')
+            <button id="logout-click-admin" title="__('Sign out')" class="pull-right btn btn-default">
                 <span class="fa fa-sign-out"></span>
             </button>
 
             <button title="Manage your account" id="account-click" class="pull-right mRight5 btn btn-info">
-                <span class="fa fa-user"></span> Your account
+                <span class="fa fa-user"></span> __('Your account')
             </button>
         </h2>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Name</th>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Username</th>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Email</th>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Subscribed in</th>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Confirmed in</th>
-                    <th class="col-md-2 col-sm-2 col-lg-2">Confirmed by</th>
-                    <th class="col-md-1 col-sm-1 col-lg-1">Paid</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Name')</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Username')</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Email')</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Subscribed in')</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Confirmed in')</th>
+                    <th class="col-md-2 col-sm-2 col-lg-2">__('Confirmed by')</th>
+                    <th class="col-md-1 col-sm-1 col-lg-1">__('Paid')</th>
                 </tr>
             </thead>
             <tbody id="admin-tb-body">
             </tbody>
         </table>
         <button title="Save" id="admin-save-btn" class="pull-right btn btn-success">
-            <span class="fa fa-save"></span> Save
+            <span class="fa fa-save"></span> __('Save')
         </button>
     </div>
 </div>

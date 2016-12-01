@@ -1,6 +1,6 @@
 <div id="tournament" class="main container hidden">
     <div class="col-md-12 col-sm-12 col-lg-12">
-        <h2>Tournament</h2>
+        <h2>__('Tournament')</h2>
     </div>
 
     <div id="tournament-brackets" class="col-md-12 col-sm-12 col-lg-12">
@@ -33,7 +33,7 @@
         </div>
         <div class="modal-footer">
             <button title="Close" type="button" class="btn btn-default" id="match-details-close">
-                <span class="fa fa-close"></span> Close
+                <span class="fa fa-close"></span> __('Close')
             </button>
         </div>
     </div>

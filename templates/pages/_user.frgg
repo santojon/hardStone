@@ -1,59 +1,59 @@
 <div id="user" class="main container hidden">
     <div class="col-md-12 col-sm-12 col-lg-12">
         <h2>
-            My Things
-            <button id="logout-click" title="Sign out" class="pull-right btn btn-default">
+            __('My Things')
+            <button id="logout-click" title="__('Sign out')" class="pull-right btn btn-default">
                 <span class="fa fa-sign-out"></span>
             </button>
 
             <button title="Manage Subscriptions" id="admin-click" class="pull-right mRight5 btn btn-warning hidden">
-                <span class="fa fa-envelope-o"></span> Subscriptions
+                <span class="fa fa-envelope-o"></span> __('Subscriptions')
             </button>
         </h2>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userFirstName">First name</label>
-            <input type="text" class="form-control" id="userFirstName" placeholder="Enter first name">
+            <label for="userFirstName">__('First name')</label>
+            <input type="text" class="form-control" id="userFirstName" placeholder="__('Enter first name')">
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userLastName">Last name</label>
-            <input type="text" class="form-control" id="userLastName" placeholder="Enter last name">
+            <label for="userLastName">__('Last name')</label>
+            <input type="text" class="form-control" id="userLastName" placeholder="__('Enter last name')">
         </div>
         
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userUsername">Username*</label>
-            <input type="text" class="form-control" id="userUsername" placeholder="Enter username">
+            <label for="userUsername">__('Username')*</label>
+            <input type="text" class="form-control" id="userUsername" placeholder="__('Enter username')">
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userGender">Gender</label>
-            <select class="form-control" id="userGender" placeholder="Enter gender">
-                <option id="fem">Female</option>
-                <option id="mal">Male</option>
+            <label for="userGender">__('Gender')</label>
+            <select class="form-control" id="userGender" placeholder="__('Enter gender')">
+                <option id="fem" value="Female">__('Female')</option>
+                <option id="mal" value="Male">__('Male')</option>
             </select>
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userEmail">Email address*</label>
-            <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+            <label for="userEmail">__('Email address')*</label>
+            <input type="email" class="form-control" id="userEmail" placeholder="__('Enter email')">
         </div>
 
         <div class="form-group col-md-4 col-sm-6 col-lg-4">
-            <label for="userPassword">Password*</label>
-            <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+            <label for="userPassword">__('Password')*</label>
+            <input type="password" class="form-control" id="userPassword" placeholder="__('Enter password')">
         </div>
 
         <div class="form-group col-md-12 col-sm-12 col-lg-12">
-            <label for="userImage">Your image url</label>
-            <input type="text" class="form-control" id="userImage" placeholder="Enter image URL">
+            <label for="userImage">__('Your image url')</label>
+            <input type="text" class="form-control" id="userImage" placeholder="__('Enter image URL')">
         </div>
 
         <div id="sub-place" class="form-group col-md-12 col-sm-12 col-lg-12">
         </div>
 
         <button title="Save" id="user-save-btn" class="pull-right btn btn-success">
-            <span class="fa fa-save"></span> Save
+            <span class="fa fa-save"></span> __('Save')
         </button>
 
     </div>

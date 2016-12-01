@@ -1,11 +1,11 @@
 <div id="login" class="main login container hidden">
     <div class="card card-container">
-        <p id="profile-name" class="profile-name-card">Login / Create Account</p>
+        <p id="profile-name" class="profile-name-card">__('Login / Create Account')</p>
         <p></p>
         <div class="form-signin">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email / username" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <button id="signin" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in / Create</button>
+            <input type="email" id="inputEmail" class="form-control" placeholder="__('Email / username')" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="__('Password')" required>
+            <button id="signin" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">__('Sign in / Create')</button>
         </div><!-- /form -->
     </div><!-- /card-container -->
 </div>

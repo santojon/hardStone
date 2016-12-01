@@ -31,7 +31,7 @@ with (
                 }
             })
 
-            showSuccess('All Subscriptions where saved!')
+            showSuccess(__('All Subscriptions where saved!'))
             dump(dataPool.export('json'))
         },
         /**

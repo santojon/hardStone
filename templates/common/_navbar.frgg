@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li id="tournament-click" class="">
                     <a title="Tournament" href="#">
-                        Tournament
+                        __('Tournament')
                     </a>
                 </li>
                 <li id="my-things-click" class="hidden">
@@ -19,7 +19,7 @@
                             class="navbar-brand-logo nav-photo"
                             src="assets/images/neutral.png"/></a>
                 </li>
-                <li id="login-click"><a href="#">Log in</a></li>
+                <li id="login-click"><a href="#">__('Log in')</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

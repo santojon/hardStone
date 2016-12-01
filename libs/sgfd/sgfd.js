@@ -40,6 +40,8 @@ function Sgfd(appConfig, options) {
                     if (!front['styles']) front['styles'] = [];
 
                     if (!conf['dependencies']) conf['dependencies'] = [];
+                    if (!conf['language']) conf['language'] = null;
+                    if (!conf['appName']) conf['appName'] = 'New Sgfd Application';
 
                     // Verifies if has any full loading
                     if (back['full']) {
@@ -76,9 +78,16 @@ function Sgfd(appConfig, options) {
 
                 // Then load all things
                 with (autoMerge(appConfig.front, appConfig.back, appConfig.conf)) {
+                    // Set default app title
+                    document.title = appName
+
                     // Load bwf domain files
                     if (bwfDomain) {
                         progressiveLoad(bwfDomains, loadBwfDomain);
+                    }
+
+                    if (language !== null) {
+                        progressiveLoad(['data/languages/' + language + '.js'], loadScript);
                     }
 
                     // Load project dependencies
@@ -121,7 +130,10 @@ function Sgfd(appConfig, options) {
                                                     progressiveLoad(styles, loadStyleAsset, function() {
                                                         progressiveLoad(views, loadView, function() {
                                                             // Run main script
-                                                            progressiveLoad(['main.js'], loadScript);
+                                                            progressiveLoad(['main.js'], loadScript, function() {
+                                                                // Set translated app title (if exsists)
+                                                                document.title = __(appName)
+                                                            });
                                                         });
                                                     });
                                                 });

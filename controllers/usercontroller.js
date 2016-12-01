@@ -30,14 +30,14 @@ with (
 
             if (curr.subscribed) {
                 document.getElementById('sub-place').innerHTML = 
-                    '<input id="sb-tournament" type="checkbox" checked disabled>\
-                        Subscribed to tournament\
-                    </label>'
+                    '<input id="sb-tournament" type="checkbox" checked disabled>' +
+                    __('Subscribe to tournament') +
+                    '</label>'
             } else {
                 document.getElementById('sub-place').innerHTML = 
-                    '<input id="sb-tournament" type="checkbox">\
-                        Subscribe to tournament\
-                    </label>'
+                    '<input id="sb-tournament" type="checkbox">' +
+                    __('Subscribe to tournament') +
+                    '</label>'
             }
         },
         /**
@@ -56,7 +56,7 @@ with (
          */
         updateCurrentUser: (firstName, lastName, username, gender, password, email, image, sub) => {
             if (username === '') {
-                showError('You should create a username!')
+                showError(__('You should create a username!'))
             } else {
                 UserController.updateUser(
                     new User({
@@ -73,9 +73,9 @@ with (
                     (usr) => {
                         _session.currentUser = usr || _session.currentUser
                         if (usr.username) {
-                            showSuccess('User info updated successfully!')
+                            showSuccess(__('User info updated successfully!'))
                         } else {
-                            showError('Fill the fields with the necessary info!')
+                            showError(__('Fill the fields with the necessary info!'))
                         }
                     }
                 )

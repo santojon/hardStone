@@ -27,7 +27,7 @@ with (
                     )
                     dump(dataPool.export('json'))
                 } else {
-                    showError('Incorrect information!')
+                    showError(__('Incorrect information!'))
                 }
             }
         },

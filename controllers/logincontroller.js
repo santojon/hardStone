@@ -20,16 +20,16 @@ with (
                         if (password === uu.password) {
                             logUser(
                                 uu,
-                                showSuccess('Welcome back, ' + uu.firstName + '!')
+                                showSuccess(__('Welcome back, ') + uu.firstName + '!')
                             )
                         } else {
-                            showError('Incorrect information!')
+                            showError(__('Incorrect information!'))
                         }
                     } else {
                         createUser({ email: email, password: password }, (u) => {
                             logUser(
                                 u,
-                                showSuccess('Welcome! Now is time to add some info about you.')
+                                showSuccess(__('Welcome! Now is time to add some info about you.'))
                             )
                         })
                     }
@@ -40,19 +40,19 @@ with (
                         if (password === logU.password) {
                             logUser(
                                 logU,
-                                showSuccess('Welcome back, ' + logU.firstName + '!')
+                                showSuccess(__('Welcome back, ') + logU.firstName + '!')
                             )
                         } else {
-                            showError('Incorrect information!')
+                            showError(__('Incorrect information!'))
                         }
                     } else if (email === logU.username) {
                         if (password === logU.password) {
                             logUser(
                                 logU,
-                                showSuccess('Welcome back, ' + logU.firstName + '!')
+                                showSuccess(__('Welcome back, ') + logU.firstName + '!')
                             )
                         } else {
-                            showError('Incorrect information!')
+                            showError(__('Incorrect information!'))
                         }
                     }
                 }

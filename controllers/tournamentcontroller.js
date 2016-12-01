@@ -31,16 +31,15 @@ with (Sgfd.Base) {
          */
         render: (container, data, score, state) => {
             switch(state) {
-                case "empty-bye":
-                    container.append("No team")
+                case 'empty-bye':
+                    container.append(__('No team'))
                     return;
-                case "empty-tbd":
-                    container.append("Upcoming")
+                case 'empty-tbd':
+                    container.append(__('Upcoming'))
                     return;
-            
-                case "entry-no-score":
-                case "entry-default-win":
-                case "entry-complete":
+                case 'entry-no-score':
+                case 'entry-default-win':
+                case 'entry-complete':
                     container.append(
                         '<img class="img-tournament-usr" src="' + data.user.image + '" >'
                     ).append('  ' + data.user.username)
