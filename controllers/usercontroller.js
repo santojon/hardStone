@@ -39,6 +39,15 @@ with (
                     __('Subscribe to tournament') +
                     '</label>'
             }
+
+            // Get location info
+            $.get('http://ipinfo.io', (_res) => {
+                document.getElementById('loc-info').innerHTML = 
+                    '<label for="locationInfo">' + __('Your Location / Network info (via ipinfo.io)') +
+                    '</label><p></p><p>' + _res.city + ', ' + _res.region + ', ' + _res.country +
+                    ' CEP: ' + _res.postal + '<br>' + __('Location') + ': (' + _res.loc + ')<br>IP: ' +  _res.ip +
+                    '</p><p>' + __('Using') + ' ' + __(browserName()) + '</p>'
+            }, 'jsonp')
         },
         /**
          * Go away

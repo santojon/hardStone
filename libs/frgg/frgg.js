@@ -14,9 +14,9 @@
      */
     load = function(url) {
         var xhr;
-        if(window.XMLHttpRequest) {
+        if(this.XMLHttpRequest) {
             xhr = new XMLHttpRequest();
-        } else if(window.ActiveXObject) {
+        } else if(this.ActiveXObject) {
             xhr = new ActiveXObject('Microsoft.XMLHTTP');
         } else {
             return false;
@@ -42,7 +42,11 @@
             tt = t.split('}}') || [t];
             tt.forEach(function(_t) {
                 if (text.includes('{{' + _t + '}}')) {
-                    _var = window[_t.trim()];
+                    _tt = _t.trim().split('.');
+                    _var = this;
+                    for(i = 0; i < _tt.length; i++) {
+                        if (_var[_tt[i]]) _var = _var[_tt[i]];
+                    }
                     if ((_var !== null) && (_var !== undefined)) {
                         text = text.replaceAll(
                             '{{' + _t + '}}',
@@ -65,7 +69,7 @@
             tt = t.split('\')') || [t];
             tt.forEach(function(_t) {
                 if (text.includes('__(\'' + _t + '\')')) {
-                    _lang = window['_language'] || {};
+                    _lang = this['_language'] || {};
                     _var = _lang[_t];
                     if ((_var !== null) && (_var !== undefined)) {
                         text = text.replaceAll(
@@ -88,7 +92,7 @@
      * Function to be used for translation in code
      * @param text: teh text to be translated
      */
-    window['__'] = function(text) {
+    this['__'] = function(text) {
         return translate('__(\'' + text + '\')');
     }
 

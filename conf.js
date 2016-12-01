@@ -28,7 +28,7 @@ var appConfig = {
     },
     conf: {
         appName: 'hardStone',
-        language: 'pt-BR',
+        language: navigator.language || 'pt-BR',
         dependencies: [
             'libs/bwf/bwf.full.js',
             'libs/bhdr/bhdr.js'

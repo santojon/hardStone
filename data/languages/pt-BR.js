@@ -60,8 +60,11 @@ var _language = {
     'User info updated successfully!': 'Informações atualizadas com sucesso!',
     'You should create a username!': 'Você precisa criar um username!',
     'All Subscriptions where saved!': 'Todas as inscrições foram salvas!',
+    'Your Location / Network info (via ipinfo.io)': 'Informações da sua Localidade / Rede (via ipinfo.io)',
+    Location: 'Latitude / Longitude',
     Upcoming: 'Por vir',
     'No team': 'Em aberto',
+    Using: 'Usando',
 
     /**
      * Data content files translations
