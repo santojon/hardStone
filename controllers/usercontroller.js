@@ -41,7 +41,7 @@ with (
             }
 
             // Get location info
-            $.get('http://ipinfo.io', (_res) => {
+            $.get(this.location.protocol + '//ipinfo.io', (_res) => {
                 document.getElementById('loc-info').innerHTML = 
                     '<label for="locationInfo">' + __('Your Location / Network info (via ipinfo.io)') +
                     '</label><p></p><p>' + _res.city + ', ' + _res.region + ', ' + _res.country +
