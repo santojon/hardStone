@@ -6,7 +6,7 @@
                 <span class="fa fa-sign-out"></span>
             </button>
 
-            <button title="Manage Subscriptions" id="admin-click" class="pull-right mRight5 btn btn-warning hidden">
+            <button title="__('Manage Subscriptions')" id="admin-click" class="pull-right mRight5 btn btn-warning hidden">
                 <span class="fa fa-envelope-o"></span> __('Subscriptions')
             </button>
         </h2>
@@ -52,7 +52,7 @@
         <div id="sub-place" class="form-group col-md-12 col-sm-12 col-lg-12">
         </div>
 
-        <button title="Save" id="user-save-btn" class="pull-right btn btn-success">
+        <button title="__('Save')" id="user-save-btn" class="pull-right btn btn-success">
             <span class="fa fa-save"></span> __('Save')
         </button>
 

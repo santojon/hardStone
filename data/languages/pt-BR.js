@@ -46,6 +46,8 @@ var _language = {
     'Enter password': 'Digite uma senha',
     'Your image url': 'URL da sua imagem',
     'Enter image URL': 'Insira uma URL',
+    'Manage your account': 'Gerenciar sua conta',
+    'Manage Subscriptions': 'Gerenciar inscrições',
 
     /**
      * Controllers and Services translations
