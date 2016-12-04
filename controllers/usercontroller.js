@@ -44,10 +44,11 @@ with (
 
             // Get location info
             $.get(this.location.protocol + '//ipinfo.io', (_res) => {
+                _resPostal = _res.postal ? ' CEP: ' + _res.postal : ''
                 document.getElementById('loc-info').innerHTML = 
                     '<label for="locationInfo">' + __('Your Location / Network info (via ipinfo.io)') +
                     '</label><p></p><p>' + _res.city + ', ' + _res.region + ', ' + _res.country +
-                    ' CEP: ' + _res.postal + '<br>' + __('Location') + ': (' + _res.loc + ')<br>IP: ' +  _res.ip +
+                    _resPostal + '<br>' + __('Location') + ': (' + _res.loc + ')<br>IP: ' +  _res.ip +
                     '</p><p>' + __('Using') + ' ' + __(browserName()) + '</p>'
             }, 'jsonp')
         },
