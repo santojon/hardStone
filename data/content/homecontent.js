@@ -15,6 +15,10 @@ var homeContent = {
             img: 'assets/images/hearthstone_event.png',
             paragraphs: [
                 'Rule 1', 
+                'ndsfnçaeifsdnçssdfndsçfsdfnsdnçsdfksnfnsdsn~fskdfnsdgn\
+                asfsddsd.Asdfsdkfsldkfçsglfmg sdff werwefs serweewee.\
+                frwewe.AAAAdasmdsewFDLGSEK SDFSFE AE . aDSFSDKE EWFRWEEW S\
+                DDEFDSsdfsd sdf e wfs eggrgrwe...',
                 'fwrer',
                 'Rule 2',
                 'Rule 3'
