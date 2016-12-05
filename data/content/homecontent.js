@@ -14,7 +14,8 @@ var homeContent = {
             title: 'Rules',
             img: 'assets/images/hearthstone_event.png',
             paragraphs: [
-                'Rule 1', " fwrer "
+                'Rule 1', 
+                'fwrer',
                 'Rule 2',
                 'Rule 3'
             ]
