@@ -1,3 +1,10 @@
+body {
+    -webkit-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    -moz-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    -o-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+}
+
 .mRight5 {
     margin-right: 5px !important;
 }
@@ -366,7 +373,9 @@ a.header-link:hover {
 }
 
 .hs_sign {
-    padding-top: 5px;
+    max-width: 500px;
+    margin: 20px 30% 0 30%;
+    size: 100%;
 }
 
 .btn-primary {

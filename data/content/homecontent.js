@@ -1,6 +1,6 @@
 var homeContent = {
     rtl: true,
-    signature: 'assets/images/packs.jpg',
+    signature: 'assets/images/packs.png',
     sections: [
         {
             title: 'About',
