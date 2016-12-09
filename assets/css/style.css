@@ -332,8 +332,7 @@ a.header-link:hover {
 
 #home {
     padding: 170px 0 30px 0;
-    background-image: url('../images/home_portrait.jpg');
-    /*background-image: url('../images/hearthstone_title_art_by_breathing.jpg');*/
+    background-image: url('../images/home_portrait.png');
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -349,7 +348,7 @@ a.header-link:hover {
 }
 
 .home-content {
-    padding-top: 5%;
+    padding-top: 8%;
 }
 
 .hs_sec_img_r {
@@ -374,8 +373,9 @@ a.header-link:hover {
 
 .hs_sign {
     max-width: 500px;
-    margin: 20px 30% 0 30%;
-    size: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
 }
 
 .btn-primary {
@@ -470,4 +470,12 @@ div.jQBracket .team.lose.highlight .score {
 
 div.jQBracket .team.win.highlight .score {
     color: #269900 !important;
+}
+
+#loader {
+    padding-top: 100px !important;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
 }

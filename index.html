@@ -2,21 +2,41 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<style>
+			/* Imediate loader style and body for it*/
+			#loader {
+				padding-top: 100px !important;
+				max-width: 600px;
+				position: absolute;
+				left: 50%;
+				margin-left: -300px;
+			}
+
+			body {
+				-webkit-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
+				-moz-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
+				-o-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
+				background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
+			}
+		</style>
 	</head>
 	<body>
-		<script type="text/frigga" src="templates/common/_navbar.frgg"></script>
-		<script type="text/frigga" src="templates/common/_messages.frgg"></script>
-		
-		<script type="text/frigga" src="templates/pages/_home.frgg"></script>
-		<script type="text/frigga" src="templates/pages/_login.frgg"></script>
-		<script type="text/frigga" src="templates/pages/_user.frgg"></script>
-		<script type="text/frigga" src="templates/pages/_tournament.frgg"></script>
-		<script type="text/frigga" src="templates/pages/_admin.frgg"></script>
+		<div id="main-content" hidden>
+			<script type="text/frigga" src="templates/common/_navbar.frgg"></script>
+			<script type="text/frigga" src="templates/common/_messages.frgg"></script>
+			
+			<script type="text/frigga" src="templates/pages/_home.frgg"></script>
+			<script type="text/frigga" src="templates/pages/_login.frgg"></script>
+			<script type="text/frigga" src="templates/pages/_user.frgg"></script>
+			<script type="text/frigga" src="templates/pages/_tournament.frgg"></script>
+			<script type="text/frigga" src="templates/pages/_admin.frgg"></script>
+		</div>
 
 		<script type="text/javascript" src="libs/sgfd/sgfd.js"></script>
 		<script type="text/javascript">
 			// Loads all needed things to run app. It need 'sgfd.js' loaded to work
 			new Sgfd('conf.js').load();
 		</script>
+		<img id="loader" src="assets/images/prizes.gif"/>
 	</body>
 </html>

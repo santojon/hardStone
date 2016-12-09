@@ -50,3 +50,7 @@ document.getElementById('admin-click').onclick = () => {
 
 // open home
 pages.Home()
+
+// Hide loader and show content
+hideItem('loader')
+document.getElementById('main-content').hidden = false
