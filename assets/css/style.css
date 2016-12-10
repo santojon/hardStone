@@ -13,6 +13,9 @@ body {
     border-radius: 0 !important;
     float: left;
     width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
     margin-top: 50px !important;
 }
 
@@ -331,6 +334,7 @@ a.header-link:hover {
 }
 
 #home {
+    margin-top: 50px;
     padding: 170px 0 30px 0;
     background-image: url('../images/home_portrait.png');
     background-repeat: no-repeat;
@@ -348,7 +352,7 @@ a.header-link:hover {
 }
 
 .home-content {
-    padding-top: 8%;
+    padding-top: 5%;
 }
 
 .hs_sec_img_r {
@@ -405,11 +409,24 @@ a.header-link:hover {
 .match-img.img-super {
     position: absolute;
     width: 210px !important;
-    height: 210px !important;
+    height: 240px !important;
     top: -5px;
     left: 33.3%;
     text-align: center !important;
     z-index: 10 !important;
+}
+
+.name-over {
+    position: absolute;
+    width: 210px !important;
+    height: 240px !important;
+    top: 180px;
+    left: 33.3%;
+    text-align: center !important;
+    z-index: 100 !important;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .winner {
@@ -424,6 +441,10 @@ a.header-link:hover {
 
 .spacer {
     margin-top: 30px !important;
+    -webkit-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    -moz-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    -o-background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
+    background-image: radial-gradient(ellipse farthest-corner, #FAD590 20%, #FAD5c0 100%);
 }
 
 .text-centered, #right-user, #left-user {
@@ -470,12 +491,4 @@ div.jQBracket .team.lose.highlight .score {
 
 div.jQBracket .team.win.highlight .score {
     color: #269900 !important;
-}
-
-#loader {
-    padding-top: 100px !important;
-    max-width: 600px;
-    position: absolute;
-    left: 50%;
-    margin-left: -300px;
 }

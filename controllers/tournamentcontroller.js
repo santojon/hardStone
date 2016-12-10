@@ -140,10 +140,12 @@ with (Sgfd.Base) {
             left.innerHTML = '<img class="match-img" src="' + users[0].image + '" >' +
                                 '<div id="main-banner-content">' +
                                     '<img class="match-img img-super" src="assets/images/frame.png">' +
+                                    '<div class="name-over">' + users[0].username + '</div>' +
                                 '</div>'
             right.innerHTML = '<img class="match-img" src="' + users[1].image + '" >' +
                                 '<div id="main-banner-content">' +
-                                    '<img class="match-img img-super" src="assets/images/frame.png">' +
+                                    '<img class="match-img img-super" src="assets/images/frame2.png">' +
+                                    '<div class="name-over">' + users[1].username + '</div>' +
                                 '</div>'
         },
         /**
