@@ -3,15 +3,14 @@ var homeContent = {
     signature: 'assets/images/packs.png',
     sections: [
         {
-            title: 'About',
+            title: 'Psst... Eu tenho um ótimo negócio para você...',
             img: 'assets/images/Anunciador_2.png',
             paragraphs: [
                 'About 1',
-                'Psst...Eu tenho um ótimo negócio para você... - Negociante Escuso'
             ]
         },
         {
-            title: 'Rules',
+            title: 'Segue as regras!',
             img: 'assets/images/rules_image.png',
             paragraphs: [
                 'Rule 1 :', 
@@ -26,8 +25,7 @@ var homeContent = {
                 Blizzard em que a vitória da partida será concedida áquele\
                 que conseguir vencer três rounds na partida.Entre rounds, o\
                  deck vencedor não poderá ser usado na partida, já o que \
-                 perdeu pode ser selecionado novamente...',
-                 'Segue as regras!! - Pacificador Aldor'
+                 perdeu pode ser selecionado novamente...'
             ]
         },
         {
@@ -35,7 +33,7 @@ var homeContent = {
             img: 'assets/images/classes_3.png',
             paragraphs: [
                 'Serão permitidos todas as classes existentes dentro do jogo,\
-                 mas não serão permitidos skins...',
+                 mas não serão permitidas skins...',
                 'Paladino - Lutarei com honra!',
                 'Druida - Eu preciso proteger a Natureza!',
                 'Caçador - Que a caçada comece!',
@@ -49,14 +47,13 @@ var homeContent = {
             ]
         },
         {
-            title: 'Prizes',
+            title: 'Quem quer presentes?',
             img: 'assets/images/prize_image.png',
             paragraphs: [
                 'Ao fim do campeonato, os jogadores que alcançarem o primeiro\
                   segundo e terceiro lugar receberão uma premiação em dinheiro\
                   correspondente á 50%, 25% e 15% do total arrecadado pelas\
-                  inscrições, respectivamente...',
-                  'Quem quer presentes? - Blingtron 3000'
+                  inscrições, respectivamente...'
             ]
         }
     ]

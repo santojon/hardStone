@@ -4,7 +4,7 @@
 
     <div class="home-content container-fluid">
         <div class="col-md-12 col-sm-12 col-lg-12">
-            <h2>__('LabHard HearthStone Tournament')</h2>
+            <h2 class="home_upper">__('LabHard HearthStone Tournament')</h2>
         </div>
 
         <div id="home-content-dynamic" class="col-md-12 col-sm-12 col-lg-12">

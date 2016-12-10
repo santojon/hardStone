@@ -1,6 +1,6 @@
 <div id="admin" class="main container hidden">
     <div class="col-md-12 col-sm-12 col-lg-12">
-        <h2>
+        <h2 class="home_upper">
             __('Subscriptions')
             <button id="logout-click-admin" title="__('Sign out')" class="pull-right btn btn-default">
                 <span class="fa fa-sign-out"></span>
