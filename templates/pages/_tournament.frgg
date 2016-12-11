@@ -32,7 +32,7 @@
             </div>
         </div>
         <div>
-            <button title="__('Close')" type="button" class="btn btn-default pull-right" id="match-details-close">
+            <button title="__('Close')" type="button" class="btn btn-default pull-right mBottom10" id="match-details-close">
                 <span class="fa fa-close"></span> __('Close')
             </button>
         </div>

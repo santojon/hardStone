@@ -9,6 +9,10 @@ body {
     margin-right: 5px !important;
 }
 
+.mBottom10 {
+    margin-bottom: 10px !important;
+}
+
 .alert {
     border-radius: 0 !important;
     float: left;

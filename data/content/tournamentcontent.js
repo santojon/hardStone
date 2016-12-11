@@ -1,14 +1,13 @@
-var teams = TournamentController.assembleTeamsData()
-var tournamentContent = {
-    teams : teams,
-    results : [
+var _teams = TournamentController.assembleTeamsData()
+var getResults = () => {
+    return [
         [/* WINNER BRACKET */
             [
                 [// the result
                     3, 2, [
                         [//the match users
-                            teams[0][0].user,
-                            teams[0][1].user
+                            _teams[0][0].user,
+                            _teams[0][1].user
                         ],
                         // the detailed results
                         [
@@ -66,8 +65,8 @@ var tournamentContent = {
                 [
                     2,3, [
                         [//the match users
-                            teams[1][0].user,
-                            teams[1][1].user
+                            _teams[1][0].user,
+                            _teams[1][1].user
                         ],
                     ]
                 ],
@@ -100,4 +99,9 @@ var tournamentContent = {
             ]
         ]
     ]
+}
+
+var tournamentContent = {
+    teams : _teams,
+    results : getResults()
 }
