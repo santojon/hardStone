@@ -31,8 +31,8 @@
                 </table>
             </div>
         </div>
-        <div class="modal-footer">
-            <button title="__('Close')" type="button" class="btn btn-default" id="match-details-close">
+        <div>
+            <button title="__('Close')" type="button" class="btn btn-default pull-right" id="match-details-close">
                 <span class="fa fa-close"></span> __('Close')
             </button>
         </div>
