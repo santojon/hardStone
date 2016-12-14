@@ -513,8 +513,8 @@ div.jQBracket .team.win.highlight .score {
     color: #269900 !important;
 }
 
-.main-content {
-    margin-bottom: 170px;
+#main-content {
+    min-height: calc(100vh - 170px);
 }
 
 #footer {
