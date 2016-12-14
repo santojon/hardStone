@@ -48,10 +48,6 @@ with (Sgfd.Base) {
                 side = !side
             })
 
-            // add signature
-            res.push('<img src="' + homeContent.signature +
-                '" alt="End of content" class="hs_sign col-sm-12 col-md-12 col-lg-12">')
-
             // put content into page
             cont.innerHTML = res.join('')
         }

@@ -1,6 +1,5 @@
 var homeContent = {
     rtl: true,
-    signature: 'assets/images/packs.png',
     sections: [
         {
             title: 'Psst... Eu tenho um ótimo negócio para você...',
