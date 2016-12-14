@@ -2,57 +2,46 @@ var homeContent = {
     rtl: true,
     sections: [
         {
-            title: 'Psst... Eu tenho um ótimo negócio para você...',
+            title: 'Psst... I have a great deal for you...',
             img: 'assets/images/Anunciador_2.png',
             paragraphs: [
                 'About 1',
             ]
         },
         {
-            title: 'Segue as regras!',
+            title: 'Follow the rules!',
             img: 'assets/images/rules_image.png',
             paragraphs: [
-                'Rule 1 :', 
-                ' - Os jogadores só poderão usar decks que sejam compostos\
-                 somente pelas edições Básicas e Clássicas...',
-                'Rule 2 :',
-                ' - Todos os jogadores deverão criar quatro decks, de classes\
-                 distintas.O adversário então irá escolher um dentre os decks\
-                 para ser banido(para não fazer parte da partida)..',
-                'Rule 3 :',
-                ' - O modo de jogo seguirá o formato "Conquest" criado pela\
-                Blizzard em que a vitória da partida será concedida áquele\
-                que conseguir vencer três rounds na partida.Entre rounds, o\
-                 deck vencedor não poderá ser usado na partida, já o que \
-                 perdeu pode ser selecionado novamente...'
+                'Rule 1:', 
+                'The players may only use decks that are made by Basic and Expert cards.',
+                'Rule 2:',
+                'All players must create four decks,from distinct classes.The adversary will then choose one deck among those to be banned.',
+                'Rule 3:',
+                'The game mod will follow the "Conquest" format created by Blizzard in which the match victory will be granted to whom manage to win three rounds.Between rounds, the winner deck can no longer be used as for the looser, it can be reselected.'
             ]
         },
         {
             title: 'Classes',
             img: 'assets/images/classes_3.png',
             paragraphs: [
-                'Serão permitidos todas as classes existentes dentro do jogo,\
-                 mas não serão permitidas skins...',
-                'Paladino - Lutarei com honra!',
-                'Druida - Eu preciso proteger a Natureza!',
-                'Caçador - Que a caçada comece!',
-                'Sacerdote - A Luz trará a vitória!',
-                'Ladino - É melhor abrir o olho!',
-                'Bruxo - Sua alma será minha!',
-                'Mago - Foi você que pediu!',
-                'Xamã - Pelo Martelo da Perdição!',
-                'Guerreiro - Vitória ou morte!',
+                'All classes in the game will be permited, but skins will not be allowed...',
+                'Paladin - I will fight with honor!',
+                'Druid - I must protect the Wild',
+                'Hunter - Let the hunt begin',
+                'Priest - The Light shall bring victory!',
+                'Rogue - Watch your back!',
+                'Warlock - Your soul shall be mine!',
+                'Mage - You asked for it!',
+                'Shaman - For Doomhammer!',
+                'Warrior - Victory or death!',
                 
             ]
         },
         {
-            title: 'Quem quer presentes?',
+            title: 'Who wants presents?',
             img: 'assets/images/prize_image.png',
             paragraphs: [
-                'Ao fim do campeonato, os jogadores que alcançarem o primeiro\
-                  segundo e terceiro lugar receberão uma premiação em dinheiro\
-                  correspondente á 50%, 25% e 15% do total arrecadado pelas\
-                  inscrições, respectivamente...'
+                'At the end of the tournament the players that achieved first, second and third place will be awarded in cash corresponding to 50%, 25% and 15% of the total amount raised by subscriptions, respectively...'
             ]
         }
     ]
