@@ -5,18 +5,15 @@
 		<style>
 			/* Imediate loader style and body for it*/
 			#loader {
-				padding-top: 100px !important;
-				max-width: 600px;
-				position: absolute;
-				left: 50%;
-				margin-left: -300px;
-			}
-
-			body {
-				-webkit-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
-				-moz-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
-				-o-background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
-				background-image: radial-gradient(ellipse farthest-corner, #05151D 20%, #081A23 100%);
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				overflow: 0;
 			}
 		</style>
 	</head>
@@ -37,6 +34,9 @@
 			// Loads all needed things to run app. It need 'sgfd.js' loaded to work
 			new Sgfd('conf.js').load();
 		</script>
-		<img id="loader" src="assets/images/prizes.gif"/>
+		<img id="loader" src="assets/images/loading_screen.png"/>
+		<div id="footer">
+			<img class="footer-img" src="assets/images/footer.png"/>
+		</div>
 	</body>
 </html>
