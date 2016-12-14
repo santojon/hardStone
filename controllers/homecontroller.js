@@ -17,7 +17,7 @@ with (Sgfd.Base) {
         getContent: () => {
             cont = document.getElementById('home-content-dynamic')
             res = []
-            side = homeContent.rtl || true
+            side = (homeContent.rtl !== undefined) ? homeContent.rtl : true
 
             homeContent.sections.forEach((sec) => {
                 res.push('<div class="hs_section col-sm-12 col-md-12 col-lg-12">')
