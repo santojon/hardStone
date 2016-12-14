@@ -122,18 +122,18 @@ function Sgfd(appConfig, options) {
                                             if (bootstrap) {
                                                 progressiveLoad(['bootstrap.js'], loadScript);
                                             }
-                                        });
 
-                                        // Load front-end files
-                                        progressiveLoad(externalScripts, loadScript, function() {
-                                            progressiveLoad(scripts, loadScriptAsset, function() {
-                                                progressiveLoad(externalStyles, loadStyle, function() {
-                                                    progressiveLoad(styles, loadStyleAsset, function() {
-                                                        progressiveLoad(views, loadView, function() {
-                                                            // Run main script
-                                                            progressiveLoad(['main.js'], loadScript, function() {
-                                                                // Set translated app title (if exsists)
-                                                                if (container['__']) document.title = __(appName);
+                                            // Load front-end files
+                                            progressiveLoad(externalScripts, loadScript, function() {
+                                                progressiveLoad(scripts, loadScriptAsset, function() {
+                                                    progressiveLoad(externalStyles, loadStyle, function() {
+                                                        progressiveLoad(styles, loadStyleAsset, function() {
+                                                            progressiveLoad(views, loadView, function() {
+                                                                // Run main script
+                                                                progressiveLoad(['main.js'], loadScript, function() {
+                                                                    // Set translated app title (if exsists)
+                                                                    if (container['__']) document.title = __(appName);
+                                                                });
                                                             });
                                                         });
                                                     });
@@ -141,7 +141,7 @@ function Sgfd(appConfig, options) {
                                             });
                                         });
                                     });
-                                })
+                                });
                             });
                         });
                     });
