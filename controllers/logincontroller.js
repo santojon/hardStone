@@ -18,9 +18,11 @@ with (
                 if (logU === null) {
                     if (uu !== null) {
                         if (password === uu.password) {
+                            sName = ''
+                            if (uu.firstName) sName = ', ' + uu.firstName
                             logUser(
                                 uu,
-                                showSuccess(__('Welcome back, ') + uu.firstName + '!')
+                                showSuccess(__('Welcome back') + sName + '!')
                             )
                         } else {
                             showError(__('Incorrect information!'))
@@ -38,18 +40,22 @@ with (
                 else {
                     if (email === logU.email) {
                         if (password === logU.password) {
+                            sName = ''
+                            if (logU.firstName) sName = ', ' + logU.firstName
                             logUser(
                                 logU,
-                                showSuccess(__('Welcome back, ') + logU.firstName + '!')
+                                showSuccess(__('Welcome back') + sName + '!')
                             )
                         } else {
                             showError(__('Incorrect information!'))
                         }
                     } else if (email === logU.username) {
                         if (password === logU.password) {
+                            sName = ''
+                            if (logU.firstName) sName = ', ' + logU.firstName
                             logUser(
                                 logU,
-                                showSuccess(__('Welcome back, ') + logU.firstName + '!')
+                                showSuccess(__('Welcome back') + sName + '!')
                             )
                         } else {
                             showError(__('Incorrect information!'))
@@ -74,7 +80,7 @@ with (
         logUser: (user, runnable) => {
             _session.currentUser = user
             saveSession()
-            document.getElementById('my_avatar').title = user.firstName
+            document.getElementById('my_avatar').title = user.firstName || ''
             if ((typeof user.image) === 'string') {
                 if (user.image !== '') {
                     document.getElementById('my_avatar').innerHTML =

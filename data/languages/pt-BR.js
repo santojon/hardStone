@@ -52,7 +52,7 @@ var _language = {
     /**
      * Controllers and Services translations
      */
-    'Welcome back, ': 'Bem vindo(a) de volta, ',
+    'Welcome back': 'Bem vindo(a) de volta',
     'Incorrect information!': 'Informações incorretas!',
     'Subscribe to tournament': 'Inscrever-se no torneio',
     'Subscribed to tournament': 'Inscrito no torneio',
@@ -60,9 +60,11 @@ var _language = {
     'Fill the fields with the necessary info!': 'Preencha os campos com os dados necessários!',
     'User info updated successfully!': 'Informações atualizadas com sucesso!',
     'You should create a username!': 'Você precisa criar um username!',
+    'This username was already taken!': 'Este username já está sendo utilizado!',
     'All Subscriptions where saved!': 'Todas as inscrições foram salvas!',
     'Your Location / Network info (via ipinfo.io)': 'Informações da sua Localidade / Rede (via ipinfo.io)',
     Location: 'Latitude / Longitude',
+    ' Postal: ': ' CEP: ',
     Upcoming: 'Por vir',
     'No team': 'Em aberto',
     Using: 'Usando',
@@ -80,7 +82,7 @@ var _language = {
     'Rule 2:': 'Regra 2:',
     'Rule 3:': 'Regra 3:',
     'The players may only use decks that are made by Basic and Expert cards.': 'Os jogadores só poderão usar decks que sejam compostos por cards Básicos e Clássicos.',
-    'All players must create four decks,from distinct classes.The adversary will then choose one deck among those to be banned.': 'Todos os jogadores deverão criar quatro decks, de classes distintas.O adversário então irá escolher um dentre os decks para ser banido(para não fazer parte da partida.',
+    'All players must create four decks,from distinct classes.The adversary will then choose one deck among those to be banned.': 'Todos os jogadores deverão criar quatro decks, de classes distintas. O adversário então irá escolher um dentre os decks para ser banido (não fazer parte da partida).',
     'The game mod will follow the "Conquest" format created by Blizzard in which the match victory will be granted to whom manage to win three rounds.Between rounds, the winner deck can no longer be used as for the looser, it can be reselected.': 'O modo de jogo seguirá o formato "Conquest" criado pela Blizzard em que a vitória da partida será concedida áquele que conseguir vencer três rounds na partida.Entre rounds, o deck vencedor não poderá ser usado na partida, já o que perdeu pode ser selecionado novamente.',
     'Follow the rules!': 'Segue as regras!',
     'All classes in the game will be permited, but skins will not be allowed...': 'Serão permitidos todas as classes existentes dentro do jogo, mas não serão permitidas skins...',

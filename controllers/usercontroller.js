@@ -44,7 +44,7 @@ with (
 
             // Get location info
             $.get(this.location.protocol + '//ipinfo.io', (_res) => {
-                _resPostal = _res.postal ? ' CEP: ' + _res.postal : ''
+                _resPostal = _res.postal ? __(' CEP: ') + _res.postal : ''
                 document.getElementById('loc-info').innerHTML = 
                     '<label for="locationInfo">' + __('Your Location / Network info (via ipinfo.io)') +
                     '</label><p></p><p>' + _res.city + ', ' + _res.region + ', ' + _res.country +
@@ -69,6 +69,8 @@ with (
         updateCurrentUser: (firstName, lastName, username, gender, password, email, image, sub) => {
             if (username === '') {
                 showError(__('You should create a username!'))
+            } else if (findUser({ username: username })) {
+                showError(__('This username was already taken!'))
             } else {
                 UserController.updateUser(
                     new User({
